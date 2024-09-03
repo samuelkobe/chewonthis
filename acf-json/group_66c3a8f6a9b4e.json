@@ -1,0 +1,803 @@
+{
+    "key": "group_66c3a8f6a9b4e",
+    "title": "Settings (Chew On This)",
+    "fields": [
+        {
+            "key": "field_66d0e3afdd6ce",
+            "label": "Menu",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6266e74c94e07",
+            "label": "Menu Icon",
+            "name": "menu_icon",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "This image\/logo will replace the menu item with the class \"menu-logo-item\" in the navigation (Appearance > Menu > Main Menu).\r\n<br><br>\r\nIt will not appear if there are 0 menu items with this class.\r\n<br><br>\r\nIt is recommended that this image be a .svg or .webp file with a transparent background).\r\n<br><br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 8,
+            "mime_types": "",
+            "allow_in_bindings": 1,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_66c3ac3e6522f",
+            "label": "Top Banner",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66c3a8f6054e3",
+            "label": "Display Top Banner?",
+            "name": "display_top_banner_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Toggle the <b>Top Banner<\/b> 'On' or 'Off'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_66c57d0a9ae7b",
+            "label": "Award Icon?",
+            "name": "award_icon_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Choose whether to display an <b>Award Icon<\/b> on the right side of the <b>Top Banner<\/b>",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66c3a8f6054e3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_66c57d4e9ae7c",
+            "label": "Award Icon",
+            "name": "award_icon",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Select an image, please use a .png or .webp file type.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66c3a8f6054e3",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_66c57d0a9ae7b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": 2,
+            "mime_types": ".png, .webp, .svg",
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_66c57fdaa141d",
+            "label": "Banner Links",
+            "name": "banner_links",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add <b>Links<\/b> to the <b>Top Banner<\/b> (min 3, max 5).",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66c3a8f6054e3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 3,
+            "max": 5,
+            "collapsed": "field_66c58014a141e",
+            "button_label": "Add Link",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66c58014a141e",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_66c57fdaa141d"
+                },
+                {
+                    "key": "field_66c64029353dc",
+                    "label": "Icon?",
+                    "name": "icon_toggle",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui_on_text": "On",
+                    "ui_off_text": "Off",
+                    "ui": 1,
+                    "parent_repeater": "field_66c57fdaa141d"
+                },
+                {
+                    "key": "field_66c6403e353dd",
+                    "label": "Link Icon",
+                    "name": "link_icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_66c64029353dc",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_66c57fdaa141d"
+                }
+            ]
+        },
+        {
+            "key": "field_66c6658506c04",
+            "label": "Social Media",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66c7a8ea576d5",
+            "label": "Social Media Accounts",
+            "name": "social_media_accounts",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Social",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66c7a930576d9",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "icon_picker",
+                    "instructions": "Paste SVG file here. You can get svg icons at <a href=\"https:\/\/iconmonstr.com\" target=\"_blank\">iconmonstr<\/a>.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "tabs": [
+                        "url"
+                    ],
+                    "return_format": "string",
+                    "library": "all",
+                    "default_value": {
+                        "type": null,
+                        "value": null
+                    },
+                    "parent_repeater": "field_66c7a8ea576d5"
+                },
+                {
+                    "key": "field_66c7a909576d7",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66c7a8ea576d5"
+                },
+                {
+                    "key": "field_66c7a90e576d8",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_66c7a8ea576d5"
+                },
+                {
+                    "key": "field_66c7a956576da",
+                    "label": "Activate?",
+                    "name": "activate",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui_on_text": "On",
+                    "ui_off_text": "Off",
+                    "ui": 1,
+                    "parent_repeater": "field_66c7a8ea576d5"
+                }
+            ]
+        },
+        {
+            "key": "field_61a0450ef4110",
+            "label": "Open Graph",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_625735e9ee731",
+            "label": "Open Graph Message",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Your Open Graph information consists of text and often an image. This information is what Google, Facebook and other Search Engines and Social Media entities use to show more details about your website's domain\/url.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5da75e896ab1c",
+            "label": "Open Graph Title",
+            "name": "open_graph_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add a title for Open Graph (sharing details).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5da75ed86ab1d",
+            "label": "Open Graph URL",
+            "name": "open_graph_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Add the expected final URL for the website's homepage for Open Graph (sharing details).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5da75f0d6ab1e",
+            "label": "Open Graph Image",
+            "name": "open_graph_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Add an image for Open Graph. Make sure to add this at the production level image's URL is the same as your website.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_66d2456cc8345",
+            "label": "Tours",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d3d87732a0e",
+            "label": "Tour Contact Info",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 1,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_66d3d90f32a11",
+            "label": "Email Inquiry",
+            "name": "email_inquiry",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Select a page where you want Tour page email inquiries to be directed to. Typically this is the contact page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_66d249e312a4e",
+            "label": "Tours Info Icons",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_66d2487c2c369",
+            "label": "Duration Title",
+            "name": "duration_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Duration",
+            "maxlength": 24,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d2458bc8346",
+            "label": "Duration Icon",
+            "name": "duration_icon",
+            "aria-label": "",
+            "type": "icon_picker",
+            "instructions": "Paste SVG file here. You can get svg icons at <a href=\"https:\/\/iconmonstr.com\" target=\"_blank\">iconmonstr<\/a>.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tabs": [
+                "url"
+            ],
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "library": "all",
+            "default_value": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "key": "field_66d24a3acd8d4",
+            "label": "Start Time Title",
+            "name": "start_time_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Start Time",
+            "maxlength": 24,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d24a3dcd8d5",
+            "label": "Start Time Icon",
+            "name": "start_time_icon",
+            "aria-label": "",
+            "type": "icon_picker",
+            "instructions": "Paste SVG file here. You can get svg icons at <a href=\"https:\/\/iconmonstr.com\" target=\"_blank\">iconmonstr<\/a>.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tabs": [
+                "url"
+            ],
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "library": "all",
+            "default_value": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "key": "field_66d24af6cd8d9",
+            "label": "Dates Title",
+            "name": "dates_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Dates",
+            "maxlength": 24,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d24aa5cd8d6",
+            "label": "Dates Icon",
+            "name": "dates_icon",
+            "aria-label": "",
+            "type": "icon_picker",
+            "instructions": "Paste SVG file here. You can get svg icons at <a href=\"https:\/\/iconmonstr.com\" target=\"_blank\">iconmonstr<\/a>.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tabs": [
+                "url"
+            ],
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "library": "all",
+            "default_value": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "key": "field_66d24af8cd8da",
+            "label": "Starting Cost Title",
+            "name": "starting_cost_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "From",
+            "maxlength": 24,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d24aa8cd8d8",
+            "label": "Starting Cost Icon",
+            "name": "starting_cost_icon",
+            "aria-label": "",
+            "type": "icon_picker",
+            "instructions": "Paste SVG file here. You can get svg icons at <a href=\"https:\/\/iconmonstr.com\" target=\"_blank\">iconmonstr<\/a>.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tabs": [
+                "url"
+            ],
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "library": "all",
+            "default_value": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "key": "field_66d24afacd8db",
+            "label": "Tour Type Title",
+            "name": "tour_type_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Tour Type",
+            "maxlength": 24,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d24aa6cd8d7",
+            "label": "Tour Type Icon",
+            "name": "tour_type_icon",
+            "aria-label": "",
+            "type": "icon_picker",
+            "instructions": "Paste SVG file here. You can get svg icons at <a href=\"https:\/\/iconmonstr.com\" target=\"_blank\">iconmonstr<\/a>.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tabs": [
+                "url"
+            ],
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "library": "all",
+            "default_value": {
+                "type": null,
+                "value": null
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "chew-settings"
+            }
+        ]
+    ],
+    "menu_order": 100,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1725165095
+}

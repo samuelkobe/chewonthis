@@ -1,0 +1,1119 @@
+{
+    "key": "group_66ca2cb4a9b97",
+    "title": "Tour Settings",
+    "fields": [
+        {
+            "key": "field_66d217ef9d70d",
+            "label": "General",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d23b81c54c9",
+            "label": "Tour Theme",
+            "name": "tour_theme",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "Choose the <b>Tour Theme<\/b>, default is <span style=\"color: #BF4427; font-weight: bold; font-family: Montserrat;\">Paprika<\/span>.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "paprika": "<span style=\"color: #BF4427; font-weight: bold; font-family: Montserrat;\">Paprika<\/span>",
+                "forest": "<span style=\"color: #587A37; font-weight: bold; font-family: Montserrat;\">Forest<\/span>",
+                "honey": "<span style=\"color: #EEA720; font-weight: bold; font-family: Montserrat;\">Honey<\/span>",
+                "caramel": "<span style=\"color: #B67F6C; font-weight: bold; font-family: Montserrat;\">Caramel<\/span>"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_66ccb1c3bdba1",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add the <b>Title<\/b> only i.e. <span style=\"text-decoration: line-through;\">Tofino:<\/span> <b>Tasting Trail<\/b>. The <b>Location<\/b> will be combined with this field.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "37.5",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 32,
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d260ae732d2",
+            "label": "Tour Features",
+            "name": "tour_features",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add features of this Tour. This \"features\" act as a tag line. i.e. 'Drink, Eat, Relax'.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "37.5",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 32,
+            "allow_in_bindings": 0,
+            "placeholder": "Drink, Eat, Relax",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d73ad8c1bb2",
+            "label": "Tour Discriptor",
+            "name": "tour_discriptor",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "This is used on a Tour card on the Tours page, or on the Featured Block card for featured tours.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "walking": "Walking Tour",
+                "ebike": "E-Bike Tour",
+                "chauffeur": "Chauffeur Driven"
+            },
+            "default_value": "walking",
+            "return_format": "label",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66d2059952630",
+            "label": "Location Disclaimer",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "Remember to add a <b>Location<\/b> taxonomy in the sidebar. <br><br>Max 1 <b>Location<\/b> per Tour.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_66d23f48cada4",
+            "label": "Info",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d240b501425",
+            "label": "Duration",
+            "name": "duration",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Set the duration of the tour.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "one": "1 hour",
+                "one-half": "1.5 hours",
+                "two": "2 hours",
+                "two-half": "2.5 hours",
+                "three": "3 hours",
+                "three-half": "3.5 hrs",
+                "four": "4 hours",
+                "four-half": "4.5 hours",
+                "five": "5 hours",
+                "five-half": "5.5 hours",
+                "six": "6 hours",
+                "six-half": "6.5 hours",
+                "seven": "7 hours",
+                "seven-half": "7.5 hours",
+                "eight": "8 hours"
+            },
+            "default_value": "three",
+            "return_format": "label",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66d241b622b7c",
+            "label": "Start Time",
+            "name": "start_time",
+            "aria-label": "",
+            "type": "time_picker",
+            "instructions": "Select a start time for the tour.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "g:i a",
+            "return_format": "g:i a",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_66d241fe22b7d",
+            "label": "Dates",
+            "name": "dates",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Provide information on Tour dates i.e. Wednesday to Sunday",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d2432f2ae67",
+            "label": "Starting Cost",
+            "name": "starting_cost",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Set a \"starting from\" cost.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 5,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d2422b22b7e",
+            "label": "Tour Type",
+            "name": "tour_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Choose the Tour Type to be displayed in the information area on the Tour page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "chauffeur": "Chauffeur Guided",
+                "chef": "Chef Guided",
+                "digital": "Digitallly Guided",
+                "various": "Various Guided Options",
+                "vip": "VIP Guided"
+            },
+            "default_value": "digital",
+            "return_format": "label",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66d23f51cada5",
+            "label": "Details",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d268f03cb3b",
+            "label": "Details",
+            "name": "details",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add text details here (heading and content).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_66d268fa3cb3c",
+            "button_label": "Add Detail",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66d268fa3cb3c",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 24,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66d268f03cb3b"
+                },
+                {
+                    "key": "field_66d380907d520",
+                    "label": "Content",
+                    "name": "content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Add text only. HTML code is also fine if you are confident in what you are adding (no images or other media here).",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1,
+                    "parent_repeater": "field_66d268f03cb3b"
+                }
+            ]
+        },
+        {
+            "key": "field_66d3caa15b578",
+            "label": "Bookings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d3cfa35b579",
+            "label": "Booking Type?",
+            "name": "booking_type_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Choose between a <b>Single Option<\/b> or the <b>Various Options<\/b> for the tours Booking Options.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Single",
+            "ui_off_text": "Various",
+            "ui": 1
+        },
+        {
+            "key": "field_66d3d0a25b57a",
+            "label": "Heading",
+            "name": "heading_booking",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add the booking section's Heading.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 32,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d3d0ec5b57c",
+            "label": "Content",
+            "name": "content_single_booking",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d3cfa35b579",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 1,
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_66d22856ad284",
+            "label": "Digitally Guided URL",
+            "name": "digitally_guided_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Add the Digitally Guided URL",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d3cfa35b579",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_66d3d11ca6ff9",
+            "label": "Various Bookings Options",
+            "name": "various_bookings_options",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "Add each booking option that is included with this tour here. There is a Max of 1 for each tour option.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d3cfa35b579",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_66d3d124d5d91": {
+                    "key": "layout_66d3d124d5d91",
+                    "name": "digitally_guided",
+                    "label": "Digitally Guided",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_66d3d1f3a6ffa",
+                            "label": "Digitally Guided Tour Option",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This is the default booking option and must always accompany a Tour that uses the <b>Various Options<\/b> booking type.",
+                            "new_lines": "br",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_66d3d274e966d",
+                            "label": "Booking Info",
+                            "name": "booking_info",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1
+                        },
+                        {
+                            "key": "field_66d3d326e966e",
+                            "label": "Digitally Guided URL",
+                            "name": "digitally_guided_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "Paste the FareHarbor booking URL here.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "1",
+                    "max": "1"
+                },
+                "layout_66d3d38ae966f": {
+                    "key": "layout_66d3d38ae966f",
+                    "name": "vip_guided",
+                    "label": "VIP Guided",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_66d3d38ae9671",
+                            "label": "Booking Info",
+                            "name": "booking_info",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1
+                        },
+                        {
+                            "key": "field_66d3d38ae9672",
+                            "label": "VIP Guided URL",
+                            "name": "vip_guided_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "Paste the FareHarbor booking URL here.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "0",
+                    "max": "1"
+                },
+                "layout_66d3d3bce9673": {
+                    "key": "layout_66d3d3bce9673",
+                    "name": "e-bike_tour",
+                    "label": "E-Bike Tour",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_66d3d3bce9674",
+                            "label": "Booking Info",
+                            "name": "booking_info",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1
+                        },
+                        {
+                            "key": "field_66d3d3bce9675",
+                            "label": "E-Bike Guided URL",
+                            "name": "ebike_guided_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "Paste the FareHarbor booking URL here.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "0",
+                    "max": "1"
+                },
+                "layout_66d3d3e3e9676": {
+                    "key": "layout_66d3d3e3e9676",
+                    "name": "chauffer_guided",
+                    "label": "Chauffer Guided",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_66d3d3e3e9677",
+                            "label": "Booking Info",
+                            "name": "booking_info",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1
+                        },
+                        {
+                            "key": "field_66d3d3e3e9678",
+                            "label": "Chauffer Guided URL",
+                            "name": "chauffer_guided_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "Paste the FareHarbor booking URL here.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "0",
+                    "max": "1"
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Option"
+        },
+        {
+            "key": "field_66d220e93fbe5",
+            "label": "Gallery",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d220f43fbe6",
+            "label": "Gallery?",
+            "name": "gallery_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Turn the Gallery 'On' or 'Off'",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_66d221343fbe7",
+            "label": "Tour Gallery",
+            "name": "tour_gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Add between 1 and 12 images to show off a Tour in a rotating <b>Gallery<\/b>.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d220f43fbe6",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "85",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min": 1,
+            "max": 12,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "prepend",
+            "preview_size": "full"
+        },
+        {
+            "key": "field_66d218acddae8",
+            "label": "Vendors",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d20846ee434",
+            "label": "Vendors?",
+            "name": "vendors_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Turn Vendors 'On' or 'Off'",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_66d20864ee435",
+            "label": "Vendors On",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d20846ee434",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "85",
+                "class": "",
+                "id": ""
+            },
+            "message": "The vendors for this Tour are turned 'On' and will automatically be displayed on the Tour page. If you would like to add vendors to this tour, go to <b>Tours > All Vendor<\/b> in the WordPress sidebar to add a new vendor.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_66d20866ee436",
+            "label": "Vendors Off",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d20846ee434",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "85",
+                "class": "",
+                "id": ""
+            },
+            "message": "The Vendors for this Tour are turned 'Off' and will <b>not<\/b> be displayed on the Tour page.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_66d218a3ddae7",
+            "label": "Testimonials",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d207546dcc5",
+            "label": "Testimonials?",
+            "name": "testimonials_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Turn Testimonials 'On' or 'Off'",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_66d207b16dcc7",
+            "label": "Testimonials On",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d207546dcc5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "The testimonials for this Tour are turned 'On' and will automatically be displayed on the Tour page. If you would like to add testimonials to this tour, go to <b>Tours > All Testimonials<\/b> in the WordPress sidebar to add a new testimonial.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_66d207e46dcc8",
+            "label": "Testimonials Off",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d207546dcc5",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "The Testimonials for this Tour are turned 'Off' and will <b>not<\/b> be displayed on the Tour page.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_66d21789a76cb",
+            "label": "Button",
+            "name": "button_testimonials",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d207546dcc5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_66d22b3cf360a",
+            "label": "Groups",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66d22b4df360b",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Have a bigger group?",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66d22b59f360c",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our boutique-style tours offer the smallest group sizes in the industry, ensuring a personalized and intimate experience. However, if you're looking to organize a larger group than what we offer in our standard package, we can accommodate your needs upon request. We understand that planning the perfect adventure for a larger group can be daunting. That's why we take care of everything for you. Simply show up and indulge in the journey, knowing we've meticulously planned every detail for your enjoyment. Inquire below to learn more about our larger group tour options.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_66d22b6ff360d",
+            "label": "Button",
+            "name": "button_groups",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d207546dcc5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tour"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1725381483
+}

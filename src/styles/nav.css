@@ -1,0 +1,20 @@
+.desktop-menu li {
+  @apply w-[calc(calc(100%/4)-calc(176px/2))] text-center;
+}
+
+.menu-logo-item .menu-anchor {
+  @apply inline text-[0px];
+}
+
+.menu-anchor {
+  @apply text-paprika w-fit inline-block;
+}
+
+.menu-anchor.active {
+  @apply border-b-2 border-paprika;
+}
+
+/* mobile menu specific styles */
+.mobile-menu-styles {
+  @apply fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-neutral-300 rounded-b-md border-b border-neutral-300 bg-neutral-50 px-6 pb-6 pt-20 dark:divide-neutral-700 dark:border-neutral-700 dark:bg-neutral-900 md:hidden;
+}

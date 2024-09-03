@@ -1,0 +1,24 @@
+{
+  "name": "acf/image-text",
+  "title": "Image + Text",
+  "description": "A block for a call to action component. with multiple options.",
+  "style": ["file:./image-text.css"],
+  "category": "formatting",
+  "icon": "columns",
+  "keywords": [
+    "image-text",
+    "50/50",
+    "image",
+    "text",
+    "Fifty Fifty",
+    "layout",
+    "webok"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "image-text.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

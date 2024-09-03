@@ -1,0 +1,16 @@
+{
+  "name": "acf/testimonials",
+  "title": "All Testimonials",
+  "description": "A block for all testimonials in a carousel.",
+  "style": ["file:./testimonials.css"],
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": ["carousel", "testimonials", "layout", "webok"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "testimonials.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

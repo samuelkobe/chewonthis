@@ -1,0 +1,61 @@
+{
+    "key": "group_66c6570baafc6",
+    "title": "BLOCK: Hero",
+    "fields": [
+        {
+            "key": "field_66c9063dc4db6",
+            "label": "Social Media?",
+            "name": "social_media",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Turn on the <b>Social Media<\/b> in this block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_66c906b4c4db8",
+            "label": "Next Section Link",
+            "name": "next_section_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "This link is accompanied by a scroll down arrow. You will need to set the URL to <b>#keyword<\/b> and then set the <b>HTML Anchor<\/b> in the Advanced tab of the section you want this link to scroll too.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/hero"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1724790573
+}

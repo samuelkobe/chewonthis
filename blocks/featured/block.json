@@ -1,0 +1,16 @@
+{
+  "name": "acf/featured",
+  "title": "Featured Tours",
+  "description": "A block for featured tours.",
+  "style": ["file:./featured.css"],
+  "category": "formatting",
+  "icon": "slides",
+  "keywords": ["carousel", "tours", "featured", "layout", "webok"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "featured.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}
