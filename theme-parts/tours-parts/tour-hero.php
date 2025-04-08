@@ -11,7 +11,7 @@
     <?php endif; ?>
     <div class="text-white font-main font-bold text-center uppercase z-[2] flex flex-col items-center justify-center space-y-4 xl:space-y-8 [text-shadow:2px_2px_16px_rgba(8,8,8,0.25),0_0_1em_rgba(8,8,8,0.25),0_0_0.2em_rgba(8,8,8,0.25)]">
       <span class="text-2xl xl:text-4xl inline-block tracking-[0.2em]"><?php echo $locations; ?></span>
-      <h1 class="text-6xl xl:text-8xl tracking-widest"><?php echo $tour_title; ?></h1>
+      <h1 class="text-4xl md:text-6xl xl:text-8xl tracking-widest"><?php echo $tour_title; ?></h1>
 
 
 

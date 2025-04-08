@@ -1,0 +1,6 @@
+.search-filter-label {
+  @apply font-main font-semibold text-lg text-dark;
+}
+.search-filter-description {
+  @apply text-sm italic text-caramel;
+}

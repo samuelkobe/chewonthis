@@ -24,6 +24,23 @@
             "new_lines": "br"
         },
         {
+            "key": "field_66f59e6494d0e",
+            "label": "Vendor Link",
+            "name": "vendor_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
             "key": "field_66d2139716d55",
             "label": "Associated Tour",
             "name": "associated_tour_vendor",
@@ -75,5 +92,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725044363
+    "modified": 1727372918
 }

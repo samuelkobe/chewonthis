@@ -28,7 +28,11 @@
           </div>
         <?php endif; ?>
         <span class="<?php echo $title_styles; ?>"><?php echo get_field( 'start_time_title', 'option' ); ?></span>
-        <span class="<?php echo $value_styles; ?>"><?php echo get_field( 'start_time' ); ?></span>
+        	<?php if ( get_field( 'flexible_time_toggle' ) ) : ?>
+		  <span class="<?php echo $value_styles; ?>"><?php echo get_field( 'flexible_time_label'); ?></span>
+			<?php else: ?>
+        		<span class="<?php echo $value_styles; ?>"><?php echo get_field( 'start_time' ); ?></span>
+			<?php endif; ?>
       </div>
 
       <div class="<?php echo $inner_wrapper_styles; ?>">
@@ -62,7 +66,12 @@
           </div>
         <?php endif; ?>
         <span class="<?php echo $title_styles; ?>"><?php echo get_field( 'starting_cost_title', 'option' ); ?></span>
-        <span class="<?php echo $value_styles; ?>"><?php echo get_field( 'starting_cost' ); ?></span>
+        <?php if ( get_field( 'cost_type_toggle' ) == 1 ) : ?>
+            <span class="<?php echo $value_styles; ?>">$<?php echo get_field( 'starting_cost' ); ?></span>
+          <?php else : ?>
+            <span class="<?php echo $value_styles; ?>"><?php echo get_field( 'starting_cost_text' ); ?></span>
+        <?php endif; ?>
+
       </div>
 
     </div>

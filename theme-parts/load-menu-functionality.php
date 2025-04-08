@@ -20,7 +20,7 @@ if ($brand_logo) {
             const image = document.createElement('img');
             image.src = '<?php echo $brand_logo_url; ?>';
             image.alt = '<?php echo $brand_logo_alt; ?>';
-            image.classList.add('md:w-16', 'lg:w-24', 'xl:w-44');
+            image.classList.add('md:w-16', 'lg:w-20', 'xl:w-28');
             image.setAttribute('x-cloak', ''); // Set the x-cloak attribute
             image.setAttribute('aria-label', tempContent); // Set the aria-label attribute
             menuLogoItem.prepend(image);

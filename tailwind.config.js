@@ -2,6 +2,10 @@ module.exports = {
   content: ["./**/*.php", "./**/*.css"],
   theme: {
     extend: {
+      aspectRatio: {
+        portrait: "5 / 7",
+        landscape: "4 / 3",
+      },
       colors: {
         paprika: "#BF4427", // Paprika
         "paprika-vivid": "#D8623E", // Paprika Vivid

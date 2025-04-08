@@ -3,7 +3,7 @@
     "title": "Settings (Chew On This)",
     "fields": [
         {
-            "key": "field_66d0e3afdd6ce",
+            "key": "field_66faf40e91e91",
             "label": "Menu",
             "name": "",
             "aria-label": "",
@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0,
             "selected": 0
         },
@@ -30,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -47,7 +47,427 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_66c3ac3e6522f",
+            "key": "field_670583fc7ba42",
+            "label": "Menu Icon Mobile",
+            "name": "menu_icon_svg",
+            "aria-label": "",
+            "type": "icon_picker",
+            "instructions": "This icon will replace the menu title if it is added.\r\n<br>\r\nIt is recommended that this image be a .svg file.\r\n<br>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "tabs": [
+                "url"
+            ],
+            "return_format": "string",
+            "allow_in_bindings": 1,
+            "library": "all",
+            "default_value": {
+                "type": null,
+                "value": null
+            }
+        },
+        {
+            "key": "field_66faf42591e92",
+            "label": "Footer",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66faf728813a7",
+            "label": "Footer Settings",
+            "name": "footer_settings",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_66faf756813a8",
+                    "label": "Column 1",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0
+                },
+                {
+                    "key": "field_66fb0af8d2f7c",
+                    "label": "Footer Logo",
+                    "name": "footer_logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_66fb0b0bd2f7d",
+                    "label": "Company information",
+                    "name": "company_information",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "rows": 4,
+                    "placeholder": "",
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_66fb0bd5022c4",
+                    "label": "Contact Info",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "The Contact information is managed in the <b>Contact Info<\/b> tab to the left.",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
+                },
+                {
+                    "key": "field_66faf761813a9",
+                    "label": "Column 2",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0
+                },
+                {
+                    "key": "field_66fb0dc736211",
+                    "label": "Column Title",
+                    "name": "col_2_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Menu",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_66fb0d7015e98",
+                    "label": "Footer Menu",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "The Footer Menu can be edited in <b>Appearance<\/b> > <b>Menus<\/b>",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
+                },
+                {
+                    "key": "field_66faf762813aa",
+                    "label": "Column 3",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0
+                },
+                {
+                    "key": "field_66fb0df436212",
+                    "label": "Column Title",
+                    "name": "col_3_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Chew on this",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_66fb0eb451cd9",
+                    "label": "Company information 2",
+                    "name": "company_information_2",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 4,
+                    "placeholder": "",
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_66fb0e2751cd7",
+                    "label": "Column Subtitle",
+                    "name": "col_3_subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Social Media",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_66fb0e1c51cd6",
+                    "label": "Social Media Info",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "The social media information is managed in the <b>Social Media<\/b> tab to the left.",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
+                },
+                {
+                    "key": "field_66faf763813ab",
+                    "label": "Column 4",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0
+                },
+                {
+                    "key": "field_66fb0e0136213",
+                    "label": "Column Title",
+                    "name": "col_4_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Newsletter",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_66fb21a88bf51",
+                    "label": "Newsletter CTA",
+                    "name": "newsletter_cta",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Add a short call to action for people to join the Newsletter.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "rows": 4,
+                    "placeholder": "",
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_66f7418be22ee",
+                    "label": "Newsletter Form",
+                    "name": "newsletter_form",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "tabs": "text",
+                    "media_upload": 0,
+                    "toolbar": "full",
+                    "delay": 0
+                },
+                {
+                    "key": "field_66fb0fe688703",
+                    "label": "Copyright",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "tab",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "placement": "top",
+                    "endpoint": 0,
+                    "selected": 0
+                },
+                {
+                    "key": "field_66fb0ff888704",
+                    "label": "Copyright text",
+                    "name": "copyright_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Chew On This Tasty Tours",
+                    "maxlength": 32,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_66faf42991e93",
             "label": "Top Banner",
             "name": "",
             "aria-label": "",
@@ -60,7 +480,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0,
             "selected": 0
         },
@@ -80,6 +500,7 @@
             },
             "message": "",
             "default_value": 1,
+            "allow_in_bindings": 1,
             "ui_on_text": "On",
             "ui_off_text": "Off",
             "ui": 1
@@ -152,11 +573,11 @@
         },
         {
             "key": "field_66c57fdaa141d",
-            "label": "Banner Links",
+            "label": "Banner Items",
             "name": "banner_links",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "Add <b>Links<\/b> to the <b>Top Banner<\/b> (min 3, max 5).",
+            "instructions": "Add <b>Items<\/b> to the <b>Top Banner<\/b> (min 3, max 5).",
             "required": 1,
             "conditional_logic": [
                 [
@@ -174,12 +595,34 @@
             },
             "layout": "block",
             "pagination": 0,
-            "min": 3,
+            "min": 1,
             "max": 5,
             "collapsed": "field_66c58014a141e",
-            "button_label": "Add Link",
+            "button_label": "Add Item",
             "rows_per_page": 20,
             "sub_fields": [
+                {
+                    "key": "field_67a0ff8ee0c04",
+                    "label": "Linked?",
+                    "name": "linked_toggle",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Toggle this item's link functionality on or off.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 1,
+                    "ui_on_text": "On",
+                    "ui_off_text": "Off",
+                    "ui": 1,
+                    "parent_repeater": "field_66c57fdaa141d"
+                },
                 {
                     "key": "field_66c58014a141e",
                     "label": "Link",
@@ -188,13 +631,52 @@
                     "type": "link",
                     "instructions": "",
                     "required": 1,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67a0ff8ee0c04",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
-                        "width": "50",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "",
+                    "allow_in_bindings": 1,
+                    "parent_repeater": "field_66c57fdaa141d"
+                },
+                {
+                    "key": "field_67a1002ce0c0a",
+                    "label": "Item Text",
+                    "name": "item_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "This should be a short 1 or 2 word banner item.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_67a0ff8ee0c04",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": 24,
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_66c57fdaa141d"
                 },
                 {
@@ -213,6 +695,7 @@
                     },
                     "message": "",
                     "default_value": 0,
+                    "allow_in_bindings": 1,
                     "ui_on_text": "On",
                     "ui_off_text": "Off",
                     "ui": 1,
@@ -220,8 +703,8 @@
                 },
                 {
                     "key": "field_66c6403e353dd",
-                    "label": "Link Icon",
-                    "name": "link_icon",
+                    "label": "Item Icon",
+                    "name": "item_icon",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -249,13 +732,14 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
+                    "allow_in_bindings": 1,
                     "preview_size": "medium",
                     "parent_repeater": "field_66c57fdaa141d"
                 }
             ]
         },
         {
-            "key": "field_66c6658506c04",
+            "key": "field_66faf42d91e94",
             "label": "Social Media",
             "name": "",
             "aria-label": "",
@@ -268,7 +752,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0,
             "selected": 0
         },
@@ -382,7 +866,7 @@
             ]
         },
         {
-            "key": "field_61a0450ef4110",
+            "key": "field_66faf53dfdd12",
             "label": "Open Graph",
             "name": "",
             "aria-label": "",
@@ -395,7 +879,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0,
             "selected": 0
         },
@@ -480,7 +964,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_66d2456cc8345",
+            "key": "field_66faf547fdd13",
             "label": "Tours",
             "name": "",
             "aria-label": "",
@@ -493,7 +977,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0,
             "selected": 0
         },
@@ -512,7 +996,7 @@
                 "id": ""
             },
             "open": 1,
-            "multi_expand": 0,
+            "multi_expand": 1,
             "endpoint": 0
         },
         {
@@ -547,7 +1031,7 @@
                 "id": ""
             },
             "open": 0,
-            "multi_expand": 0,
+            "multi_expand": 1,
             "endpoint": 0
         },
         {
@@ -779,6 +1263,106 @@
                 "type": null,
                 "value": null
             }
+        },
+        {
+            "key": "field_66fb0d0fbeb19",
+            "label": "End Accordion",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 1
+        },
+        {
+            "key": "field_66fb0c96c126d",
+            "label": "Contact Info",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66fb14292762b",
+            "label": "Email",
+            "name": "email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "Select a page where you want Tour page email inquiries to be directed to. Typically this is the contact page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "chewonthistastytours@gmail.com",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66fb0b454de04",
+            "label": "Telephone number",
+            "name": "telephone_number",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Numbers only.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66fb0b824de05",
+            "label": "Telephone number text",
+            "name": "telephone_number_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Text users will tap or click. i.e. \"toll free: +1 855 243 9224  + 1855 CHEWBC4\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -799,5 +1383,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725165095
+    "modified": 1738607320
 }

@@ -60,6 +60,7 @@ function webok_enqueue_editor_assets($theme_dir) {
         'webok-all-styles',
         get_stylesheet_directory_uri() . '/style.css'
     );
+
     wp_enqueue_style(
         'webok-editor-styles',
         get_stylesheet_directory_uri() . '/style-editor.css'
@@ -81,6 +82,11 @@ function register_acf_blocks() {
     __DIR__ . '/blocks/image-text',
     __DIR__ . '/blocks/testimonials',
     __DIR__ . '/blocks/content-stack',
+    __DIR__ . '/blocks/clusters',
+    __DIR__ . '/blocks/fifty-fifty',
+    __DIR__ . '/blocks/form',
+    __DIR__ . '/blocks/gallery',
+    __DIR__ . '/blocks/faqs',
   ];
 
   foreach ($blocks as $block_path) {
@@ -112,6 +118,9 @@ function footer_scripts()
 
 	wp_register_script('button-scroll-js', get_template_directory_uri() . '/js/button-scroll.js', array(), '1.0.0'); // Custom scripts
 	wp_enqueue_script('button-scroll-js'); // Enqueue
+
+	wp_register_script('footer-js', get_template_directory_uri() . '/js/footer.js', array(), '1.0.0'); // Custom scripts
+	wp_enqueue_script('footer-js'); // Enqueue
 }
 
 /* ####### Load styles ####### */
@@ -139,16 +148,20 @@ function webokstarter_nav_desktop()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul class="desktop-menu hidden items-start md:mx-auto md:container md:w-full md:justify-between gap-4 md:flex md:text-lg xl:text-2xl 2xl:text-4xl font-sans font-medium lowercase antialiased">%3$s</ul>', // The items_wrap lets us put Tailwind CSS classes on the desktop menu's <ul> element.
+		'items_wrap'      => '<ul class="desktop-menu hidden items-start md:mx-auto md:container md:w-full md:justify-between gap-4 md:flex md:items-center md:text-lg xl:text-2xl 2xl:text-3xl font-sans font-medium lowercase antialiased">%3$s</ul>', // The items_wrap lets us put Tailwind CSS classes on the desktop menu's <ul> element.
 		'depth'           => 0,
-    'add_li_class'    => 'this is a test',
 		'walker'          => false
 		)
 	);
 }
 
-function webokstarter_nav_mobile()
+function webokstarter_nav_mobile($if_home)
 {
+    if ($if_home == true) {
+        $mobile_menu_mt = 'mt-20';
+    } else {
+        $mobile_menu_mt = 'mt-0';
+    }
 	wp_nav_menu(
 	array(
 		'theme_location'  => 'mobile-menu',
@@ -164,9 +177,32 @@ function webokstarter_nav_mobile()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul x-cloak x-show="mobileMenuIsOpen" x-transition:enter="transition motion-reduce:transition-none ease-out duration-300" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition motion-reduce:transition-none ease-out duration-300" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu" class="mobile-menu-styles">%3$s</ul>', // The items_wrap lets us put Tailwind CSS classes on the mobile menu's <ul> element.
+		'items_wrap'      => '<ul id="mobile_menu_ul" x-cloak x-show="mobileMenuIsOpen" x-transition:enter="transition motion-reduce:transition-none ease-out duration-300" x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0" x-transition:leave="transition motion-reduce:transition-none ease-out duration-300" x-transition:leave-start="translate-y-0" x-transition:leave-end="-translate-y-full" id="mobileMenu" class="mobile-menu-styles ' . $mobile_menu_mt . ' ">%3$s</ul>', // The items_wrap lets us put Tailwind CSS classes on the mobile menu's <ul> element.
 		'depth'           => 0,
-    'add_li_class'    => '',
+		'walker'          => false
+		)
+	);
+}
+
+function webokstarter_nav_footer()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'footer-menu',
+		'menu'            => '',
+		'container'       => 'div',
+		'container_class' => 'menu-{menu slug}-container',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => false,
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'items_wrap'      => '<ul class="footer-menu-styles">%3$s</ul>', // The items_wrap lets us put Tailwind CSS classes on the Footer menu's <ul> element.
+		'depth'           => 0,
 		'walker'          => false
 		)
 	);
@@ -178,6 +214,7 @@ function register_menu()
     register_nav_menus(array( // Using array to specify more menus if needed
         'desktop-menu' => __('Desktop Main Menu', 'web-ok-starter'), // Main Navigation
         'mobile-menu' => __('Mobile Main Menu', 'web-ok-starter'), // Main Navigation
+        'footer-menu' => __('Footer Menu', 'web-ok-starter'), // Footer Navigation
     ));
 }
 
@@ -238,11 +275,23 @@ function webokstarter_wp_pagination()
     global $wp_query;
     $big = 999999999;
     echo paginate_links(array(
-        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-        'format' => '?paged=%#%',
-        'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
+        'base'      => str_replace($big, '%#%', get_pagenum_link($big)),
+        'format'    => '?paged=%#%',
+        'current'   => max(1, get_query_var('paged')),
+        'prev_text' => __('Previous'),
+        'next_text' => __('Next'),        
+        'total'     => $wp_query->max_num_pages
     ));
+}
+
+// Custom Excerpts
+function custom_post_excerpt( $excerpt, $length ) {
+    $output = wp_trim_words( $excerpt, $length, '...'); // use the excerpt if it exists and trim it if it is too long.
+    return $output;
+}
+
+function my_custom_title($title) {
+  return wp_trim_words($title, 6, '...');
 }
 
 // Remove Admin bar
@@ -410,6 +459,18 @@ function prefix_disable_gutenberg($current_status, $post_type)
     return $current_status;
 }
 
+// Add custom post type archive title
+function new_cpt_archive_title($title){
+
+    if ( is_post_type_archive('tour') ){
+        $title = 'Experiences - ' . get_bloginfo('name');
+        return $title;
+    }
+
+    return $title;
+} 
+
+add_filter( 'pre_get_document_title', 'new_cpt_archive_title', 9999 );
 
 // Reorder columns and add a custom column to the "Testimonial" post type
 function add_testimonial_tour_column($columns) {
@@ -417,7 +478,7 @@ function add_testimonial_tour_column($columns) {
     unset($columns['date']);
 
     // Add the "Tour" column
-    $columns['testimonial_tour'] = 'Tour';
+    $columns['testimonial_tour'] = 'Experience';
 
     // Re-add the "Date" column after the "Tour" column
     $columns['date'] = 'Date';

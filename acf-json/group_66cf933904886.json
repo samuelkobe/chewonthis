@@ -7,7 +7,7 @@
             "label": "Block Colour Scheme",
             "name": "block_colour_scheme",
             "aria-label": "",
-            "type": "select",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,18 +17,21 @@
                 "id": ""
             },
             "choices": {
-                "default": "Default",
-                "alt": "Alternate",
-                "tertiary": "Tertiary",
-                "dark": "Dark"
+                "bread": "<span style=\"color: #F2DDC7; font-weight: bold; font-family: Montserrat;\">Bread<\/span>",
+                "dark": "<span style=\"color: #1C1C1C; font-weight: bold; font-family: Montserrat;\">Dark<\/span>",
+                "paprika": "<span style=\"color: #BF4427; font-weight: bold; font-family: Montserrat;\">Paprika<\/span>",
+                "forest": "<span style=\"color: #587A37; font-weight: bold; font-family: Montserrat;\">Forest<\/span>",
+                "honey": "<span style=\"color: #EEA720; font-weight: bold; font-family: Montserrat;\">Honey<\/span>",
+                "caramel": "<span style=\"color: #B67F6C; font-weight: bold; font-family: Montserrat;\">Caramel<\/span>",
+                "white": "<span style=\"color: #FFFFFF; background-color:#cecece; padding: 2px; font-weight: bold; font-family: Montserrat;\">White<\/span>"
             },
-            "default_value": "default",
+            "default_value": "bread",
             "return_format": "value",
-            "multiple": 0,
             "allow_null": 0,
-            "ui": 1,
-            "ajax": 1,
-            "placeholder": ""
+            "other_choice": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "save_other_choice": 0
         },
         {
             "key": "field_66cf93652cea9",
@@ -114,9 +117,10 @@
             },
             "default_value": "",
             "maxlength": "",
-            "rows": "",
+            "allow_in_bindings": 1,
+            "rows": 4,
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "br"
         },
         {
             "key": "field_66cf93582cea8",
@@ -153,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1724886263
+    "modified": 1727974095
 }

@@ -107,7 +107,13 @@
             "choices": {
                 "walking": "Walking Tour",
                 "ebike": "E-Bike Tour",
-                "chauffeur": "Chauffeur Driven"
+                "self": "Self Driven",
+                "chauffeur": "Chauffeur Driven",
+                "driven-combo": "Self Driven or Chauffeur Driven",
+                "chef": "Chef Hosted",
+                "multi-1": "Walking or Chauffeur",
+                "multi-2": "Walking, Chauffeur, or E-Bike",
+                "multi-3": "Self Driven, Chauffeur, or E-Bike"
             },
             "default_value": "walking",
             "return_format": "label",
@@ -183,7 +189,14 @@
                 "six-half": "6.5 hours",
                 "seven": "7 hours",
                 "seven-half": "7.5 hours",
-                "eight": "8 hours"
+                "eight": "8 hours",
+                "eight-half": "8.5 hours",
+                "nine": "9 hours",
+                "varies": "Varies",
+                "daytrip": "Day Trip",
+                "twoday": "2 Days \/ 1 Night",
+                "threeday": "3 Days \/ 2 Nights",
+                "fourday": "4 Days \/ 3 Nights"
             },
             "default_value": "three",
             "return_format": "label",
@@ -195,6 +208,56 @@
             "placeholder": ""
         },
         {
+            "key": "field_677c737fb078d",
+            "label": "Flexible Time?",
+            "name": "flexible_time_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Choose between a <b>Flexible Time Label<\/b> or a time stamped time for the tour <b>Start Time<\/b>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No",
+            "ui": 1
+        },
+        {
+            "key": "field_677c73beb078e",
+            "label": "Flexible Time Label",
+            "name": "flexible_time_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Please use only one word for the <b>Flexible Time Label<\/b>.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_677c737fb078d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 16,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_66d241b622b7c",
             "label": "Start Time",
             "name": "start_time",
@@ -202,9 +265,17 @@
             "type": "time_picker",
             "instructions": "Select a start time for the tour.",
             "required": 1,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_677c737fb078d",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
-                "width": "50",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -234,21 +305,81 @@
             "append": ""
         },
         {
-            "key": "field_66d2432f2ae67",
-            "label": "Starting Cost",
-            "name": "starting_cost",
+            "key": "field_67db2f56c5555",
+            "label": "Cost Type?",
+            "name": "cost_type_toggle",
             "aria-label": "",
-            "type": "text",
-            "instructions": "Set a \"starting from\" cost.",
-            "required": 1,
+            "type": "true_false",
+            "instructions": "Choose between a starting price, or a text message about starting cost.",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "15",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Price",
+            "ui_off_text": "Text",
+            "ui": 1
+        },
+        {
+            "key": "field_66d2432f2ae67",
+            "label": "Starting Cost (Price)",
+            "name": "starting_cost",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Set a \"starting from\" cost.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67db2f56c5555",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "35",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": 5,
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 1,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67db2f7ec5556",
+            "label": "Starting Cost (Text)",
+            "name": "starting_cost_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Display a text message about starting costs.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67db2f56c5555",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "35",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "",
             "prepend": "",
@@ -271,9 +402,9 @@
             "choices": {
                 "chauffeur": "Chauffeur Guided",
                 "chef": "Chef Guided",
-                "digital": "Digitallly Guided",
+                "digital": "Itinerary Guided",
                 "various": "Various Guided Options",
-                "vip": "VIP Guided"
+                "vip": "Host Guided"
             },
             "default_value": "digital",
             "return_format": "label",
@@ -318,7 +449,7 @@
             },
             "layout": "block",
             "pagination": 0,
-            "min": 0,
+            "min": 1,
             "max": 0,
             "collapsed": "field_66d268fa3cb3c",
             "button_label": "Add Detail",
@@ -394,7 +525,7 @@
             "name": "booking_type_toggle",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Choose between a <b>Single Option<\/b> or the <b>Various Options<\/b> for the tours Booking Options.",
+            "instructions": "Choose between a <b>Chef Option<\/b> or the <b>Tours Options<\/b> for the Booking Options Type.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -405,8 +536,8 @@
             "message": "",
             "default_value": 1,
             "allow_in_bindings": 0,
-            "ui_on_text": "Single",
-            "ui_off_text": "Various",
+            "ui_on_text": "Chef",
+            "ui_off_text": "Tours",
             "ui": 1
         },
         {
@@ -461,7 +592,7 @@
         },
         {
             "key": "field_66d22856ad284",
-            "label": "Digitally Guided URL",
+            "label": "Chef Hosted URL",
             "name": "digitally_guided_url",
             "aria-label": "",
             "type": "url",
@@ -487,7 +618,7 @@
         },
         {
             "key": "field_66d3d11ca6ff9",
-            "label": "Various Bookings Options",
+            "label": "Tours Bookings Options",
             "name": "various_bookings_options",
             "aria-label": "",
             "type": "flexible_content",
@@ -511,12 +642,12 @@
                 "layout_66d3d124d5d91": {
                     "key": "layout_66d3d124d5d91",
                     "name": "digitally_guided",
-                    "label": "Digitally Guided",
+                    "label": "Itinerary Guided",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_66d3d1f3a6ffa",
-                            "label": "Digitally Guided Tour Option",
+                            "label": "Itinerary Guided Tour Option",
                             "name": "",
                             "aria-label": "",
                             "type": "message",
@@ -528,7 +659,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "This is the default booking option and must always accompany a Tour that uses the <b>Various Options<\/b> booking type.",
+                            "message": "This is the default booking option and must always accompany a Tour that uses the <b>Tours Options<\/b> booking type.",
                             "new_lines": "br",
                             "esc_html": 0
                         },
@@ -555,7 +686,7 @@
                         },
                         {
                             "key": "field_66d3d326e966e",
-                            "label": "Digitally Guided URL",
+                            "label": "Itinerary Guided URL",
                             "name": "digitally_guided_url",
                             "aria-label": "",
                             "type": "url",
@@ -563,22 +694,43 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_6700bd818a40c",
+                            "label": "Itinerary Guided Off Season",
+                            "name": "digitally_guided_off_season",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Toggle buttons booking buttons on or off depending on the season.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No",
+                            "ui": 1
                         }
                     ],
-                    "min": "1",
+                    "min": "0",
                     "max": "1"
                 },
                 "layout_66d3d38ae966f": {
                     "key": "layout_66d3d38ae966f",
                     "name": "vip_guided",
-                    "label": "VIP Guided",
+                    "label": "Host Guided",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -604,7 +756,7 @@
                         },
                         {
                             "key": "field_66d3d38ae9672",
-                            "label": "VIP Guided URL",
+                            "label": "Host Guided URL",
                             "name": "vip_guided_url",
                             "aria-label": "",
                             "type": "url",
@@ -612,13 +764,34 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_6700be11a5e5f",
+                            "label": "Host Guided Off Season",
+                            "name": "vip_guided_off_season",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Toggle buttons booking buttons on or off depending on the season.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No",
+                            "ui": 1
                         }
                     ],
                     "min": "0",
@@ -661,13 +834,34 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_6700be38a5e60",
+                            "label": "E-Bike Guided Off Season",
+                            "name": "ebike_guided_off_season",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Toggle buttons booking buttons on or off depending on the season.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No",
+                            "ui": 1
                         }
                     ],
                     "min": "0",
@@ -675,8 +869,8 @@
                 },
                 "layout_66d3d3e3e9676": {
                     "key": "layout_66d3d3e3e9676",
-                    "name": "chauffer_guided",
-                    "label": "Chauffer Guided",
+                    "name": "chauffeur_guided",
+                    "label": "Chauffeur Guided",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -702,21 +896,42 @@
                         },
                         {
                             "key": "field_66d3d3e3e9678",
-                            "label": "Chauffer Guided URL",
-                            "name": "chauffer_guided_url",
+                            "label": "Chauffeur Guided URL",
+                            "name": "chauffeur_guided_url",
                             "aria-label": "",
                             "type": "url",
                             "instructions": "Paste the FareHarbor booking URL here.",
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
                             "default_value": "",
                             "allow_in_bindings": 0,
                             "placeholder": ""
+                        },
+                        {
+                            "key": "field_6700be5ba5e61",
+                            "label": "Chauffeur Guided Off Season",
+                            "name": "chauffeur_guided_off_season",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Toggle buttons booking buttons on or off depending on the season.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No",
+                            "ui": 1
                         }
                     ],
                     "min": "0",
@@ -892,6 +1107,35 @@
             "message": "The Vendors for this Tour are turned 'Off' and will <b>not<\/b> be displayed on the Tour page.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_66eb189152915",
+            "label": "Vendor Info",
+            "name": "vendor_info",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d20846ee434",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "85",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Vendors subject to change based on date and time of year.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
         },
         {
             "key": "field_66d218a3ddae7",
@@ -1105,7 +1349,7 @@
         ]
     ],
     "menu_order": 0,
-    "position": "side",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -1115,5 +1359,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725381483
+    "modified": 1742418143
 }

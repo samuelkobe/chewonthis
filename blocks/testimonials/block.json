@@ -5,7 +5,7 @@
   "style": ["file:./testimonials.css"],
   "category": "formatting",
   "icon": "admin-comments",
-  "keywords": ["carousel", "testimonials", "layout", "webok"],
+  "keywords": ["carousel", "testimonials", "layout", "webok", "chew"],
   "acf": {
     "mode": "preview",
     "renderTemplate": "testimonials.php"

@@ -50,10 +50,25 @@ $thumbnail_url = 'temp'
 			height: 24px;
 			opacity: 0;
 		}
+		@media only screen and (max-width: 600px) {
+			.swiper-pagination-bullet {
+				background-color: #FFF;
+				width: 16px;
+				height: 16px;
+				opacity: 0;
+			}
+		}
 		.swiper-pagination-bullet-active {
 			width: 28px;
 			height: 28px;
 			opacity: 1;
+		}
+		@media only screen and (max-width: 600px) {
+			.swiper-pagination-bullet-active {
+				width: 20px;
+				height: 20px;
+				opacity: 1;
+			}
 		}
 		.swiper-pagination-bullet-active-prev,
 		.swiper-pagination-bullet-active-next {
@@ -63,30 +78,15 @@ $thumbnail_url = 'temp'
 		.swiper-pagination-bullet-active-next-next {
 			opacity: 0;
 		}
-		/* .swiper-button-next,
-		.swiper-button-prev {
-			height: 48px;
-			transform: translateY(-48%);
-		}
-		.swiper-button-prev:after {
-			content: '◀';
-			font-size: 24px;
-			color: #FFF;
-		}
-		.swiper-button-next:after {
-			content: '▶';
-			font-size: 24px;
-			color: #FFF;
-		} */
 	}
 </style>
 
 <section id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?> bg-bread-vivid">
 
-	<div class="container py-6 xl:pb-24 mx-auto">
-		<div class="grid grid-cols-[64px_minmax(0,_auto)_64px] grid-rows-[120px_24dvh_24dvh_120px] [grid-template-areas:'social_slider_empty''social_slider_empty''arrow_slider_empty''arrow_slider_empty'] w-full h-full">
+	<div class="container md:py-6 xl:pb-24 mx-auto">
+		<div class="grid grid-cols-[64px_minmax(0,_auto)_64px] grid-rows-[120px_20dvh_20dvh_120px] md:grid-rows-[120px_24dvh_24dvh_120px] [grid-template-areas:'slider_slider_slider''slider_slider_slider''slider_slider_slider''slider_slider_slider'] md:[grid-template-areas:'social_slider_empty''social_slider_empty''arrow_slider_empty''arrow_slider_empty'] w-full h-full">
 
-			<div class="[grid-area:social/social] flex justify-end px-6">
+			<div class="[grid-area:social/social] hidden md:flex justify-end px-6">
 				<?php if ( get_field( 'social_media' ) == 1 ) : ?>
 					<?php require get_template_directory() . "/theme-parts/social-vertical.php"; ?>
 				<?php endif; ?>
@@ -119,7 +119,7 @@ $thumbnail_url = 'temp'
 										<a href="<?php echo $permalink; ?>" title="Explore <?php echo $locations . ': ' . $tour_title; ?>" aria-label="Explore <?php echo $locations . ': ' . $tour_title; ?>">
 											<?php the_post_thumbnail( 'full', array( 'class' => 'w-full h-full object-cover mix-blend-multiply' ) ); ?>
 											<div class="absolute inset-0 w-full h-full bg-black opacity-50"></div>
-											<div class="absolute left-0 bottom-0 pl-12 py-6">
+											<div class="absolute left-0 bottom-12 md:bottom-0 pl-12 py-6">
 												<span class="antialiased font-condensed font-bold text-3xl uppercase text-white tracking-widest [text-shadow:1px_1px_2px_rgba(2,2,2,0.25),0_0_1em_rgba(2,2,2,0.25),0_0_0.2em_rgba(2,2,2,0.25)]"><?php echo $locations . ': ' . $tour_title; ?></span>
 											</div>
 										</a>
@@ -132,7 +132,7 @@ $thumbnail_url = 'temp'
 						endif;
 						wp_reset_postdata(); ?>
 						
-						<div class="relative bottom-24 lg:bottom-4 left-0 right-0 w-48 mx-auto">
+						<div class="relative bottom-4 md:bottom-24 left-0 right-0 w-48 mx-auto">
 							<!-- <div class="swiper-button-prev absolute left-0"></div> -->
 							<div class="swiper-pagination"></div>
 							<!-- <div class="swiper-button-next absolute right-0"></div> -->
@@ -142,7 +142,7 @@ $thumbnail_url = 'temp'
 				</div>
 			</div>
 
-			<div class="[grid-area:arrow/arrow] flex justify-end px-6">	
+			<div class="[grid-area:arrow/arrow] hidden md:flex justify-end px-6">	
 				<?php $next_section_link = get_field( 'next_section_link' ); ?>
 				<?php if ( $next_section_link ) : ?>
 					<a href="<?php echo esc_url( $next_section_link['url'] ); ?>" target="<?php echo esc_attr( $next_section_link['target'] ); ?>" aria-label="Go to next section" role="button" tabindex="0" class="flex flex-col justify-end section_btn">				
@@ -169,7 +169,7 @@ $thumbnail_url = 'temp'
 	initialSlide: 1,
   slidesPerView: 1,
 		autoplay: {
-			delay: 10000,
+			delay: 5000,
 		},
   // navigation: {
   //   nextEl: '.swiper-button-next',

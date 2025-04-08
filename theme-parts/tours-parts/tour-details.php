@@ -6,7 +6,7 @@ $tour_details = wp_get_object_terms( $tour_id, 'tour-detail' );
 <section id="details_<?php echo $tour_id; ?>" class="scroll-m-20 bg-white">
   <div class="container px-6 py-6 lg:py-20 mx-auto relative">
     <div class="grid lg:grid-cols-[2fr_1fr] [grid-template-areas:'tag''detail''button'] lg:[grid-template-areas:'detail_detail_tag''detail_detail_button'] w-full">
-      <div class="[grid-area:detail/detail] w-full min-h-64 lg:p-12">
+      <div class="[grid-area:detail/detail] w-full min-h-32 lg:p-12">
 
         <?php if ( have_rows( 'details' ) ) : ?>
           <?php while ( have_rows( 'details' ) ) : the_row(); ?>
@@ -22,7 +22,7 @@ $tour_details = wp_get_object_terms( $tour_id, 'tour-detail' );
         <?php endif; ?>
 
       </div>
-      <div class="[grid-area:tag/tag] w-full min-h-64 p-0 lg:p-12 lg:pb-0 mb-6 lg:mb-0">
+      <div class="[grid-area:tag/tag] w-full max-w-[480px] min-h-32 p-0 lg:p-12 lg:pb-0 mb-6 lg:mb-0">
         <?php if ( ! empty( $tour_details ) ) : // Loop over each tour detail and display the icon and name ?>
           <div class="flex flex-wrap items-center justify-center lg:flex-nowrap lg:grid lg:grid-cols-2 gap-4 xl:gap-8 py-4">
             <?php foreach ( $tour_details as $tour_detail ) : ?>
@@ -41,7 +41,7 @@ $tour_details = wp_get_object_terms( $tour_id, 'tour-detail' );
             <?php endforeach; ?>
           </div>
         <?php  else : ?>
-            <p>No tour details found.</p>
+            <p>Tour/Experience detail icons coming soon!</p>
         <?php endif; ?>
       </div>
       <div class="[grid-area:button/button] w-full min-h-64 lg:p-12">
@@ -49,7 +49,14 @@ $tour_details = wp_get_object_terms( $tour_id, 'tour-detail' );
         <h2 class="uppercase mb-2 xl:mb-4 text-xl xl:text-3xl tracking-wide font-main font-bold antialiased text-<?php echo $tour_theme; ?>">Booking:</h2>
 
       <?php if ( get_field( 'booking_type_toggle' ) == 1 ) : ?>
-        <?php require get_template_directory() . "/theme-parts/icons/van-icon.php"; // Include van icon ?>
+              <?php $button_digitally_guided = get_field( 'digitally_guided_url' ); ?>
+              <?php if ( $button_digitally_guided != '' ) : ?>
+                <div class="bg-clip-text w-full flex justify-center">
+                  <a class="btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8" href="<?php echo $button_digitally_guided; ?>" target="_blank">
+                    Chef Hosted
+                  </a>
+                </div>
+              <?php endif; ?>
       <?php else : ?>
         <?php if ( have_rows( 'various_bookings_options' ) ): ?>
           <?php while ( have_rows( 'various_bookings_options' ) ) : the_row(); ?>
@@ -57,44 +64,68 @@ $tour_details = wp_get_object_terms( $tour_id, 'tour-detail' );
               
               <?php $button_digitally_guided = get_sub_field( 'digitally_guided_url' ); ?>
               <?php if ( $button_digitally_guided != '' ) : ?>
-                <div class="bg-clip-text w-full flex justify-center">
-                  <a class="btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8" href="<?php echo $button_digitally_guided; ?>" target="_blank">
-                    Digitally Guided
-                  </a>
-                </div>
+
+                <?php if ( get_sub_field( 'digitally_guided_off_season' ) == 1 ) : ?>
+                  <?php // in off season ?>
+                <?php else : ?>
+                  <div class="bg-clip-text w-full flex justify-center">
+                    <a class="group btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8 relative" href="<?php echo $button_digitally_guided; ?>" target="_blank">
+                      Itinerary Guided
+                      <!-- <span class="group-hover:opacity-100 transition-opacity duration-300 opacity-0 flex items-center justify-center absolute inset-0 hover:!bg-<?php echo $tour_theme; ?> text-xs xl:text-sm w-full text-center capitalize">Curated. Hosted. Experiential. Wanderings.</span> -->
+                    </a>
+                  </div>
+                <?php endif; ?>
+
               <?php endif; ?>
 
             <?php elseif ( get_row_layout() == 'vip_guided' ) : ?>
 
               <?php $button_vip_guided = get_sub_field( 'vip_guided_url' ); ?>
               <?php if ( $button_vip_guided != '' ) : ?>
-                <div class="bg-clip-text w-full flex justify-center">
-                  <a class="btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8" href="<?php echo $button_vip_guided; ?>" target="_blank">
-                    VIP Guided
-                  </a>
-                </div>
+
+                <?php if ( get_sub_field( 'vip_guided_off_season' ) == 1 ) : ?>
+                  <?php // in off season ?>
+                <?php else : ?>
+                  <div class="bg-clip-text w-full flex justify-center">
+                    <a class="btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8" href="<?php echo $button_vip_guided; ?>" target="_blank">
+                      Host Guided
+                    </a>
+                  </div>
+                <?php endif; ?>
+
               <?php endif; ?>
 
             <?php elseif ( get_row_layout() == 'e-bike_tour' ) : ?>
 
               <?php $ebike_guided_url = get_sub_field( 'ebike_guided_url' ); ?>
               <?php if ( $ebike_guided_url != '' ) : ?>
-                <div class="bg-clip-text w-full flex justify-center">
-                  <a class="btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8" href="<?php echo $ebike_guided_url; ?>" target="_blank">
-                    E-Bike Tour
-                  </a>
-                </div>
+
+                <?php if ( get_sub_field( 'ebike_guided_off_season' ) == 1 ) : ?>
+                  <?php // in off season ?>
+                <?php else : ?>
+                  <div class="bg-clip-text w-full flex justify-center">
+                    <a class="btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8" href="<?php echo $ebike_guided_url; ?>" target="_blank">
+                      E-Bike Tour
+                    </a>
+                  </div>
+                <?php endif; ?>
+
               <?php endif; ?>
               
-            <?php elseif ( get_row_layout() == 'chauffer_guided' ) : ?>
+            <?php elseif ( get_row_layout() == 'chauffeur_guided' ) : ?>
 
-              <?php $chauffer_guided_url = get_sub_field( 'chauffer_guided_url' ); ?>
-              <?php if ( $chauffer_guided_url != '' ) : ?>
-                <div class="bg-clip-text w-full flex justify-center">
-                  <a class="btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8" href="<?php echo $chauffer_guided_url; ?>" target="_blank">
-                    Chauffer Guided
-                  </a>
-                </div>
+              <?php $chauffeur_guided_url = get_sub_field( 'chauffeur_guided_url' ); ?>
+              <?php if ( $chauffeur_guided_url != '' ) : ?>
+                
+                <?php if ( get_sub_field( 'chauffeur_guided_off_season' ) == 1 ) : ?>
+                  <?php // in off season ?>
+                <?php else : ?>
+                  <div class="bg-clip-text w-full flex justify-center">
+                    <a class="btn wide hover:!bg-<?php echo $tour_theme; ?> mt-6 xl:mt-8" href="<?php echo $chauffeur_guided_url; ?>" target="_blank">
+                      Chauffeur Guided
+                    </a>
+                  </div>
+                <?php endif; ?>
 
               <?php endif; ?>
             <?php endif; ?>

@@ -86,10 +86,25 @@ if ( ! empty( $block['align'] ) ) {
 						</div>
 
 						<?php $testimonial_text = wp_trim_words( get_field( 'testimonial', $post_data ), 24, '...' ); ?>
-						<div class="flex flex-col text-white items-center justify-center text-center">
-							<p class="font-main font-normal text-base"><?php echo $testimonial_text; ?></p>
-							<span class="mt-2">- <?php echo get_field( 'author', $post_data ); ?></span>
-						</div>
+
+ 						<?php $testimonial_url = get_field( 'testimonial_url', $post_data ); ?>
+ 						<?php $testimonial_author = get_field( 'author', $post_data ); ?>
+            <?php if ( $testimonial_url ) : ?>
+							<a class="flex flex-col text-white items-center justify-center text-center relative" aria-label="Open <?php echo $testimonial_author; ?>'s testimonial." href="<?php echo esc_url( $testimonial_url['url'] ); ?>" target="<?php echo esc_attr( $testimonial_url['target'] ); ?>">
+                <div class="flex w-full justify-center fill-bread absolute -bottom-16" title="Open <?php echo $testimonial_author; ?>'s testimonial."> 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg>
+                </div>
+                <p class="font-main font-normal text-base"><?php echo $testimonial_text; ?></p>
+                <span class="mt-2">- <?php echo $testimonial_author; ?></span>
+              </a>
+            <?php else: ?>
+							<div class="flex flex-col text-white items-center justify-center text-center">
+								<p class="font-main font-normal text-base"><?php echo $testimonial_text; ?></p>
+								<span class="mt-2">- <?php echo get_field( 'author', $post_data ); ?></span>
+							</div>
+            <?php endif; ?>
+
+
 
 						
 
@@ -139,6 +154,7 @@ if ( ! empty( $block['align'] ) ) {
 	centeredSlides: true,
   spaceBetween: 64,
 	autoplay: {
+		pauseOnMouseEnter: true,
 		delay: 4000,
 	},
 

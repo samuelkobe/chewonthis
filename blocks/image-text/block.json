@@ -1,18 +1,18 @@
 {
   "name": "acf/image-text",
   "title": "Image + Text",
-  "description": "A block for a call to action component. with multiple options.",
+  "description": "A block that has an image and text, with an icon and other options.",
   "style": ["file:./image-text.css"],
   "category": "formatting",
-  "icon": "columns",
+  "icon": "align-pull-left",
   "keywords": [
     "image-text",
     "50/50",
     "image",
     "text",
-    "Fifty Fifty",
     "layout",
-    "webok"
+    "webok",
+    "chew"
   ],
   "acf": {
     "mode": "preview",

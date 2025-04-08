@@ -48,37 +48,75 @@ if ( ! empty( $block['align'] ) ) {
 	}
 
 	switch ($colour_scheme) {
-		case 'default':
-			$background_colour = 'bg-bread';
+		case 'bread':
+			$background_colour = 'bg-bread-vivid';
+			$tag_colour = 'text-paprika';
 			$heading_colour = 'text-paprika';
+			$subheading_colour = 'text-paprika';
 			$heading_two_colour = 'text-caramel';
 			$content_colour = 'text-dark';
-			$button_styles = 'btn alt mt-6 xl:mt-12';
+			$button_styles = 'btn mt-6 xl:mt-12';
 			break;
-		case 'alt':
+		case 'paprika':
 			$background_colour = 'bg-paprika';
-			$heading_colour = 'text-bread';
-			$heading_two_colour = 'text-white';
+			$tag_colour = 'text-white';
+			$heading_colour = 'text-white';
+			$subheading_colour = 'text-bread';
+			$heading_two_colour = 'text-bread';
 			$content_colour = 'text-white';
 			$button_styles = 'btn alt mt-6 xl:mt-12';
 			break;
-		case 'tertiary':
+		case 'forest':
+			$background_colour = 'bg-forest';
+			$tag_colour = 'text-white';
+			$heading_colour = 'text-white';
+			$subheading_colour = 'text-bread';
+			$heading_two_colour = 'text-bread';
+			$content_colour = 'text-white';
+			$button_styles = 'btn alt mt-6 xl:mt-12';
+			break;
+		case 'honey':
+			$background_colour = 'bg-honey';
+			$tag_colour = 'text-white';
+			$heading_colour = 'text-white';
+			$subheading_colour = 'text-bread';
+			$heading_two_colour = 'text-bread';
+			$content_colour = 'text-white';
+			$button_styles = 'btn alt mt-6 xl:mt-12';
+			break;
+		case 'caramel':
+			$background_colour = 'bg-caramel';
+			$tag_colour = 'text-white';
+			$heading_colour = 'text-white';
+			$subheading_colour = 'text-bread';
+			$heading_two_colour = 'text-bread';
+			$content_colour = 'text-white';
+			$button_styles = 'btn alt mt-6 xl:mt-12';
+			break;
+		case 'dark':
+			$background_colour = 'bg-clay';
+			$tag_colour = 'text-white';
+			$heading_colour = 'text-white';
+			$subheading_colour = 'text-caramel';
+			$heading_two_colour = 'text-bread';
+			$content_colour = 'text-white';
+			$button_styles = 'btn alt mt-6 xl:mt-12';
+			break;
+		case 'white':
 			$background_colour = 'bg-white';
 			$heading_colour = 'text-caramel';
 			$heading_two_colour = 'text-caramel-vivid';
 			$content_colour = 'text-dark';
 			$button_styles = 'btn mt-6 xl:mt-12';
 			break;
-		case 'dark':
-			$background_colour = 'bg-clay';
-			$heading_colour = 'text-bread';
-			$heading_two_colour = 'text-white';
-			$content_colour = 'text-white';
-			$button_styles = 'btn alt';
-			break;
-
 		default:
-			# code...
+			$background_colour = 'bg-bread';
+			$tag_colour = 'text-paprika';
+			$heading_colour = 'text-paprika';
+			$subheading_colour = 'text-paprika';
+			$heading_two_colour = 'text-caramel';
+			$content_colour = 'text-dark';
+			$button_styles = 'btn mt-6 xl:mt-12';
 			break;
 	}
 ?>

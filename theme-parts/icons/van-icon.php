@@ -1,5 +1,5 @@
 <div class="fill-white flex w-12 h-12">
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  <svg version="1.1" id="van-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 80 64" style="enable-background:new 0 0 80 64;" xml:space="preserve">
   <path d="M19.44,56.6c-2.92,0-5.4-1.02-7.44-3.07s-3.07-4.53-3.07-7.44H1.92V14.56c0-1.93,0.69-3.58,2.06-4.95S7,7.55,8.93,7.55
     h49.05L79,28.57v17.52h-7.01c0,2.92-1.02,5.4-3.07,7.44s-4.53,3.07-7.44,3.07s-5.4-1.02-7.44-3.07s-3.07-4.53-3.07-7.44H29.95

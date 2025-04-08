@@ -36,7 +36,6 @@ if ( ! empty( $block['align'] ) ) {
 	$heading = get_field( 'heading' );
 	$subtitle = get_field( 'subtitle' );
 	$content = get_field( 'content' );
-	$orientation = get_field( 'image_orientation' );
 ?>
 
 <section id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?> scroll-m-20 bg-honey">
