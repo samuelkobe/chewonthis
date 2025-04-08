@@ -1,0 +1,161 @@
+{
+    "key": "group_66cf933904886",
+    "title": "BLOCK: Call to action",
+    "fields": [
+        {
+            "key": "field_66cf957e0406a",
+            "label": "Block Colour Scheme",
+            "name": "block_colour_scheme",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "bread": "<span style=\"color: #F2DDC7; font-weight: bold; font-family: Montserrat;\">Bread<\/span>",
+                "dark": "<span style=\"color: #1C1C1C; font-weight: bold; font-family: Montserrat;\">Dark<\/span>",
+                "paprika": "<span style=\"color: #BF4427; font-weight: bold; font-family: Montserrat;\">Paprika<\/span>",
+                "forest": "<span style=\"color: #587A37; font-weight: bold; font-family: Montserrat;\">Forest<\/span>",
+                "honey": "<span style=\"color: #EEA720; font-weight: bold; font-family: Montserrat;\">Honey<\/span>",
+                "caramel": "<span style=\"color: #B67F6C; font-weight: bold; font-family: Montserrat;\">Caramel<\/span>",
+                "white": "<span style=\"color: #FFFFFF; background-color:#cecece; padding: 2px; font-weight: bold; font-family: Montserrat;\">White<\/span>"
+            },
+            "default_value": "bread",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 1,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_66cf93652cea9",
+            "label": "Split Heading?",
+            "name": "split_heading_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Turn the <b>Split Heading<\/b> on if you wish to have a two tone heading for this Call to Action.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_66cf93392cea6",
+            "label": "Heading",
+            "name": "heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66cf93ec2ceaa",
+            "label": "Heading 2",
+            "name": "heading_two",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66cf93652cea9",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66cf93502cea7",
+            "label": "Content",
+            "name": "content",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 1,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_66cf93582cea8",
+            "label": "Button",
+            "name": "button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "This is optional.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/cta"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1727974095
+}

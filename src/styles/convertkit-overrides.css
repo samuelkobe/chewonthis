@@ -1,0 +1,30 @@
+.formkit-powered-by-convertkit-container {
+  @apply hidden text-black #{!important};
+}
+
+.formkit-field .formkit-input {
+  @apply lowercase focus:ring-paprika focus:ring-2 font-semibold rounded-none border-t-0 border-r-0 border-l-0 border-dark placeholder-[#000000] border-b-2 bg-bread focus:bg-bread #{!important};
+}
+
+.seva-form.formkit-form {
+  @apply mb-0 #{!important};
+}
+
+.seva-fields.formkit-fields {
+  @apply flex flex-col #{!important};
+}
+
+.formkit-submit.formkit-submit {
+  @apply w-fit shadow-md mt-4 #{!important};
+}
+
+.formkit-submit.formkit-submit span {
+  @apply uppercase font-bold font-sans tracking-widest rounded-md shadow-lg hover:shadow-xl transition flex w-fit text-sm xl:text-lg duration-300 bg-caramel hover:bg-paprika border-[3px] border-transparent py-1 xl:py-2 px-4 xl:px-8 cursor-pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #f2ddc7 inset !important;
+}

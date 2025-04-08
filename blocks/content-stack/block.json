@@ -1,0 +1,16 @@
+{
+  "name": "acf/content-stack",
+  "title": "Content Stack",
+  "description": "A block that allows you to stack content vertically in various styles.",
+  "style": ["file:./content-stack.css"],
+  "category": "formatting",
+  "icon": "schedule",
+  "keywords": ["content stack", "stack", "layout", "webok", "chew"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "content-stack.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "acf/fifty-fifty",
+  "title": "50/50 Content",
+  "description": "A block for adding 50/50 content. This could be Image + Text, Video + Text, Video + Image, Text + Text etc.",
+  "style": ["file:./fifty-fifty.css"],
+  "category": "formatting",
+  "icon": "columns",
+  "keywords": [
+    "50/50",
+    "fifty fifty",
+    "image",
+    "text",
+    "video",
+    "layout",
+    "webok",
+    "chew"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "fifty-fifty.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

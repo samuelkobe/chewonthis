@@ -1,3 +1,203 @@
+/*
+Theme Name: Chew On This Tasty Tours
+Theme URI: https://www.webok.ca/projects
+Description: A WP theme by Web Ok Solutions Inc. Customized for the exclusive use by Chew On This Tasty Tours.
+Version: 0.0.1
+Author: Web Ok Solution Inc.
+Author URI: https://webok.ca
+Tags: block-theme
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/lgpl-3.0.html
+Tested up to: 6.6.1
+Text Domain: web-ok-solutuions-theme--chew-on-this-tasty-tours
+Requires PHP: 7.4.3 or higher
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+
+/* Global Styles */
+body {
+  @apply font-main bg-white text-black;
+}
+
+body .editor-styles-wrapper {
+  @apply font-main;
+}
+
+.editor-styles-wrapper a {
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+a p,
+a span,
+a,
+dd {
+  @apply selection:bg-paprika selection:text-white;
+}
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://use.typekit.net/kge3wmk.css");
+
+/* Headings */
+.heading-one {
+  @apply font-sans font-semibold uppercase text-3xl xl:text-6xl tracking-widest;
+}
+.content {
+  @apply font-main font-normal text-sm xl:text-lg leading-[4rem];
+}
+
+.content.large {
+  @apply text-base xl:text-2xl;
+}
+
+.content {
+  @apply leading-relaxed xl:leading-[48px] #{!important};
+}
+
+/* Pagination styles */
+
+.pagination .page-numbers {
+  @apply bg-white w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-lg;
+}
+
+.pagination .page-numbers.current {
+  @apply font-bold bg-caramel-vivid;
+}
+
+.pagination .next.page-numbers,
+.pagination .prev.page-numbers {
+  @apply bg-[#ffffff] w-fit text-sm lg:text-xl;
+}
+
+/* WYSIWYG extra styles */
+.wysiwyg {
+  @apply text-base;
+}
+.wysiwyg p {
+  @apply font-main font-medium antialiased mb-2 xl:mb-4;
+}
+
+.wysiwyg a {
+  @apply text-paprika border-b-2 border-paprika font-sans font-semibold antialiased lowercase hover:text-paprika-vivid hover:border-paprika-vivid transition-colors duration-300;
+}
+
+.wysiwyg strong {
+  @apply font-bold antialiased;
+}
+
+.wysiwyg ul {
+  @apply list-disc list-inside;
+}
+
+.wysiwyg ol {
+  @apply list-decimal list-inside;
+}
+
+.wysiwyg ul ul,
+.wysiwyg ol ol {
+  @apply list-[circle] list-inside indent-6;
+}
+
+.wysiwyg blockquote {
+  @apply pl-4 border-l-8 py-2 xl:py-4 border-paprika indent-4 font-sans font-semibold uppercase text-lg xl:text-3xl mb-2 xl:mb-4;
+}
+
+.wysiwyg blockquote p {
+  @apply mb-0;
+}
+
+/* Buttons */
+@layer components {
+  .btn {
+    @apply font-semibold font-sans tracking-wider rounded-md shadow-lg hover:shadow-xl transition flex w-fit lowercase text-lg xl:text-2xl duration-300 bg-caramel hover:bg-paprika border-[3px] border-transparent py-1 xl:py-2 px-4 xl:px-8 cursor-pointer;
+  }
+
+  .btn.small {
+    @apply text-base xl:text-xl py-[2px] xl:py-1 px-2 xl:px-4;
+  }
+
+  .btn.tour-auxiliary {
+    @apply opacity-75 #{!important};
+  }
+
+  .btn {
+    @apply text-white hover:text-white no-underline #{!important};
+  }
+
+  .btn.alt {
+    @apply text-[white] hover:text-[white] hover:shadow-xl hover:bg-caramel bg-transparent shadow-none border-white hover:border-caramel no-underline #{!important};
+  }
+
+  .btn.alt-tour-paprika {
+    @apply text-[white] hover:text-[white] hover:shadow-xl hover:bg-paprika bg-transparent shadow-none border-white hover:border-paprika no-underline #{!important};
+  }
+
+  .btn.alt-tour-forest {
+    @apply text-[white] hover:text-[white] hover:shadow-xl hover:bg-forest bg-transparent shadow-none border-white hover:border-forest no-underline #{!important};
+  }
+  .btn.alt-tour-honey {
+    @apply text-[white] hover:text-[white] hover:shadow-xl hover:bg-honey bg-transparent shadow-none border-white hover:border-honey no-underline #{!important};
+  }
+
+  .btn.alt-tour-caramel {
+    @apply text-[white] hover:text-[white] hover:shadow-xl hover:bg-caramel bg-transparent shadow-none border-white hover:border-caramel no-underline #{!important};
+  }
+
+  .btn.wide {
+    @apply w-[80%] sm:w-[60%] lg:w-full text-center flex items-center justify-center #{!important};
+  }
+
+  .btn.transparent {
+    @apply bg-white hover:bg-[#cccccc] border-white text-black mix-blend-screen #{!important};
+  }
+}
+/* Accessibility Styles */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
