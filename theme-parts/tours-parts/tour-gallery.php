@@ -35,35 +35,12 @@
         <div class="swiper-pagination"></div>
       </div>
 
-      <?php if ( get_field( 'booking_type_toggle' ) == 1 ) : ?>
+      <div class="text-white font-main font-bold text-center uppercase z-[2] flex flex-col items-center absolute left-0 right-0 bottom-32 pointer-events-none">
+        <span class="text-lg xl:text-2xl inline-block tracking-[0.2em]"><?php echo $locations; ?></span>
+        <h2 class="text-3xl md:text-5xl xl:text-6xl tracking-widest !mt-2"><?php echo $tour_title; ?></h2>
+      </div>
 
-        <?php $button_gallery = get_field( 'digitally_guided_url' ); ?>
-        <?php if ( $button_gallery != '' ) : ?>
-          <div class="bg-clip-text w-full flex justify-center items-center absolute left-0 right-0 bottom-32 z-10 pointer-events-none">
-            <a class="btn alt-tour-<?php echo $tour_theme; ?> h-fit cursor-pointer pointer-events-auto" href="<?php echo $button_gallery; ?>" target="_blank">
-              Book Now
-            </a>
-          </div>
-        <?php endif; ?>
-
-      <?php else: ?>
-
-        <?php if ( have_rows( 'various_bookings_options' ) ): ?>
-          <?php while ( have_rows( 'various_bookings_options' ) ) : the_row(); ?>
-            <?php if ( get_row_layout() == 'digitally_guided' ) : ?>
-              <?php $button_gallery = get_sub_field( 'digitally_guided_url' ); ?>
-              <?php if ( $button_gallery != '' ) : ?>
-                <div class="bg-clip-text w-full flex justify-center items-center absolute left-0 right-0 bottom-32 z-10 pointer-events-none">
-                  <a class="btn alt-tour-<?php echo $tour_theme; ?> h-fit cursor-pointer pointer-events-auto" href="<?php echo $button_gallery; ?>" target="_blank">
-                    Book Now
-                  </a>
-                </div>
-              <?php endif; ?>
-            <?php endif; ?>
-          <?php endwhile; ?>
-        <?php endif; ?>
-        
-      <?php endif; ?>
+        <?//php require get_template_directory() . "/theme-parts/tours-parts/button-groups/gallery-buttons.php"; // Include the gallery buttons template (Currently hidden).?>
 
     </div>
   

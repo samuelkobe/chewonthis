@@ -965,7 +965,7 @@
         },
         {
             "key": "field_66faf547fdd13",
-            "label": "Tours",
+            "label": "Experiences",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -1000,6 +1000,73 @@
             "endpoint": 0
         },
         {
+            "key": "field_69fce1371ee63",
+            "label": "CTA Link?",
+            "name": "cta_link_toggle",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "on": "On",
+                "off": "Off"
+            },
+            "default_value": "off",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_687822016e6ed",
+            "label": "CTA Link",
+            "name": "zaui_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "This link is displayed at the bottom of the Experiences page.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69fce1371ee63",
+                        "operator": "==",
+                        "value": "on"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_69fce1a127cab",
+            "label": "CTA Link Message",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "message": "CTA Link currently off. This is the floating button at the bottom of the website. Select 'On' to have it displayed on the website and reveal its settings.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_66d3d90f32a11",
             "label": "Email Inquiry",
             "name": "email_inquiry",
@@ -1018,7 +1085,7 @@
         },
         {
             "key": "field_66d249e312a4e",
-            "label": "Tours Info Icons",
+            "label": "Experiences Info Icons",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -1383,5 +1450,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1738607320
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1778180580
 }

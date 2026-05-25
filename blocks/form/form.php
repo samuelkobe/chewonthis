@@ -90,7 +90,7 @@ if ( ! empty( $block['align'] ) ) {
 		<div class="grid grid-cols-12">
 			<div class="col-span-12 lg:col-span-4">
 				<h1 class="uppercase font-sans font-semibold tracking-widest text-2xl xl:text-[35px] xl:leading-normal w-full mb-4 xl:mb-6 <?php echo $heading_colour; ?>"><?php echo $heading; ?></h1>
-				<p class="w-full font-main font-normal text-sm xl:text-lg xl:leading-[2.5rem] <?php echo $content_colour; ?>"><?php echo $content; ?></p>
+				<p class="w-full font-main font-normal text-sm xl:text-lg xl:leading-[2.15rem] <?php echo $content_colour; ?>"><?php echo $content; ?></p>
 				<div class="mt-12 md:mt-16">
 					<p>Questions? Email us at:</p>
 					<a class="hover:text-paprika hover:border-paprika-vivid transition-colors duration-300 border-b-2 md:!border-none md:border-b-transparent border-b-dark w-fit" href="mailto:<?php echo get_field( 'email', 'option' ); ?>" target="_blank"><?php the_field( 'email', 'option' ); ?></a>

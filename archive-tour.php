@@ -76,6 +76,7 @@
 							$tour_title = get_field('title', $the_query->ID );
 							$tour_discriptor = get_field( 'tour_discriptor', $the_query->ID );
 							$tour_features = get_field( 'tour_features', $the_query->ID );
+							$tour_type_checked_options = get_field( 'tour_type', $the_query->ID );
 							$tour_theme = get_field( 'tour_theme', $the_query->ID );
 							$starting_cost = get_field( 'starting_cost', $the_query->ID );
 							$starting_cost_text = get_field( 'starting_cost_text', $the_query->ID );
@@ -98,6 +99,17 @@
 									<a class="h-56 xl:h-64 flex w-full relative" href="<?php the_permalink(); ?>" title="View the <?php echo $locations . ": " . $tour_title; ?> tour." aria-label="Open the <?php echo $locations . ": " . $tour_title; ?> tour.">
 										<?php the_post_thumbnail('full', array('class' => 'object-cover h-full w-full')); ?>
 										<span class="capitalize font-main italic font-semibold tracking-wider text-sm lg:text-xs xl:text-sm antialiased bg-<?php echo $tour_theme; ?> absolute bottom-0 left-0 right-0 text-center text-white p-1"><?php echo $tour_features; ?></span>
+										
+										<?php if ( $tour_type_checked_options ): ?>
+											<?php foreach ( $tour_type_checked_options as $tour_type_checked_option ): ?>
+												<?php if ($tour_type_checked_option['value'] == 'request' ) : ?>
+													<div class="capitalize font-main italic font-semibold tracking-wider rounded-sm text-sm lg:text-xs xl:text-sm antialiased bg-<?php echo $tour_theme; ?> absolute top-0 right-0 text-center text-white p-1">
+														<?php echo esc_html( $tour_type_checked_option['label'] ); ?>
+													</div>
+													<?php endif; ?>
+												<?php endforeach; ?>
+											<?php endif; ?>
+
 									</a>
 
 									<div class="bg-[#ffffff] min-h-[280px] lg:h-[45%] py-6 px-12 flex items-center justify-between flex-col gap-y-4">
@@ -133,6 +145,16 @@
 						// No tours found
 				<?php endif; ?>
 			</div>
+			<?php if ( get_field( 'cta_link_toggle', 'option' ) === 'on' ) : ?>
+				<div class="container px-6 py-12 xl:py-28 mx-auto font-semibold font-main">
+					<?php $zaui_link = get_field( 'zaui_link', 'option' ); ?>
+					<?php if ( $zaui_link ) : ?>
+						<div class="flex items-center justify-center mt-12">
+							<a class="btn" href="<?php echo esc_url( $zaui_link['url'] ); ?>" target="<?php echo esc_attr( $zaui_link['target'] ); ?>"><?php echo esc_html( $zaui_link['title'] ); ?></a>
+						</div>
+					<?php endif; ?>
+				</div>
+			<?php endif; ?>
 		</section>
 	</main>
 

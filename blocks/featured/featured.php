@@ -60,17 +60,17 @@ if ( ! empty( $block['align'] ) ) {
 							?> 
 
 							<div class="flex justify-center w-full h-auto lg:aspect-[5/7]">
-								<div class="bg-caramel flex flex-col w-full h-full rounded-xl overflow-hidden">
+								<div class="bg-caramel flex flex-col w-full h-full rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
 									<a href="<?php the_permalink($post); ?>" class="h-56 lg:h-[55%] flex w-full">
 										<img class="object-cover h-full w-full" src="<?php echo $thumbnail_url; ?>" alt="<?php echo $tour_title; ?>">
 									</a>
-									<div class="bg-white h-auto lg:h-[45%] py-6 px-12 flex items-center justify-center flex-col gap-y-4">
-										<a href="<?php the_permalink($post); ?>" class="flex items-center justify-center flex-col">
+									<div class="bg-white h-auto lg:h-[45%] flex items-center justify-center flex-col gap-y-4">
+											<a href="<?php the_permalink($post); ?>" class="flex items-center justify-center flex-col h-full w-full py-6 px-6 sm:px-12">
 											<h2 class="font-condensed font-semibold uppercase tracking-wide text-3xl lg:text-xl xl:text-3xl text-dark text-center w-full mb-1"><?php echo $locations . ": " . $tour_title; ?></h2>
-											<h3 class="uppercase font-condensed tracking-wider text-2xl lg:text-base xl:text-2xl antialiased"><?php the_field( 'tour_discriptor', $post ); ?></h3>
+											<h3 class="text-center uppercase font-condensed tracking-wider text-2xl lg:text-base xl:text-2xl antialiased"><?php the_field( 'tour_discriptor', $post ); ?></h3>
+											<h4 class="text-center capitalize font-main italic tracking-wider text-sm xl:text-base antialiased mt-4"><?php the_field( 'tour_features', $post ); ?></h4>
+											<span class="font-medium text-base lg:text-sm xl:text-base hover:text-paprika transition-colors duration-300 uppercase mt-2 underline decoration-2 decoration-transparent underline-offset-2 hover:decoration-paprika">View Experience</span>
 										</a>
-										<h4 class="capitalize font-main italic tracking-wider text-sm xl:text-base antialiased"><?php the_field( 'tour_features', $post ); ?></h4>
-										<a href="<?php the_permalink($post); ?>" class="font-medium text-base lg:text-sm xl:text-base hover:text-paprika transition-colors duration-300">book now +</a>
 									</div>
 								</div>
 							</div>

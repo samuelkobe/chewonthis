@@ -72,8 +72,10 @@
 </section>
 
 	<?php wp_footer(); ?>
+<!-- Zaui Embedded Booking API -->
+<!--  <script src="https://chewonthistastytours.zaui.net/themes/default/js/zaui-embed-api-v1.js"></script> -->
+
 	<!-- FAREHARBOUR LIGHTFRAME SCRIPT -->
 	<script type="text/javascript" src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
-		
 	</body>
 </html>

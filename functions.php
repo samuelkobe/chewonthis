@@ -75,6 +75,7 @@ add_action( 'enqueue_block_editor_assets', 'webok_enqueue_editor_assets' );
 /** Add custom blocks via ACF to theme */
 function register_acf_blocks() {
   $blocks = [
+    __DIR__ . '/blocks/main-hero',
     __DIR__ . '/blocks/hero',
     __DIR__ . '/blocks/featured',
     __DIR__ . '/blocks/cta',
@@ -96,8 +97,15 @@ function register_acf_blocks() {
 add_action( 'init', 'register_acf_blocks' );
 
 /*------------------------------------*\
-  Fucntions  
+  Functions
 \*------------------------------------*/
+
+// Enqueue Dashicons on the frontend
+add_action( 'wp_enqueue_scripts', function() {
+    wp_enqueue_style( 'dashicons' );
+} );
+
+
 /* ####### Load scripts (header.php) ####### */
 function header_scripts()
 {
@@ -530,3 +538,8 @@ function display_vendor_tour_column($column_name, $post_id) {
 
 add_filter('manage_vendor_posts_columns', 'add_vendor_tour_column');
 add_action('manage_posts_custom_column', 'display_vendor_tour_column', 10, 2);
+
+/*------------------------------------*\
+  Schema Markup
+\*------------------------------------*/
+require get_template_directory() . '/inc/schema.php';

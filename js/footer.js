@@ -31,6 +31,14 @@ if (document.body.classList.contains("single-tour")) {
 } else {
   tourDetailsButton.style.display = "none";
 }
+// Display the "See Available Experiences" button when not on the single-tour page
+const availableToursButton = document.querySelector(".open-zaui");
+
+if (document.body.classList.contains("single-tour")) {
+  availableToursButton.style.display = "none";
+} else {
+  availableToursButton.style.display = "inline-block";
+}
 
 // Scroll event for the "Back to Top" button
 window.addEventListener("scroll", function () {
@@ -54,4 +62,48 @@ document.querySelector(".back-to-top").addEventListener("click", () => {
 // Click event for the "Back to Tours" button
 document.querySelector(".back-to-tours").addEventListener("click", () => {
   window.location.href = "/tours";
+});
+
+//mobile sub-menu toggle
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .querySelectorAll("#mobile_menu_ul > li > a.mobile-menu-anchor")
+    .forEach((anchor) => {
+      const subMenu = anchor.parentElement.querySelector(".sub-menu");
+      if (anchor.getAttribute("href") === "#" && subMenu) {
+        // Add '+' beside the anchor if it has a sub-menu
+        if (!anchor.querySelector(".submenu-toggle")) {
+          const plus = document.createElement("span");
+          plus.textContent = " +";
+          plus.className = "submenu-toggle";
+          anchor.appendChild(plus);
+        }
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          subMenu.classList.toggle("active");
+        });
+      }
+    });
+});
+
+//desktop sub-menu toggle
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .querySelectorAll(".desktop-menu > li > a.menu-anchor")
+    .forEach((anchor) => {
+      const subMenu = anchor.parentElement.querySelector(".sub-menu");
+      if (anchor.getAttribute("href") == "#" && subMenu) {
+        // Add '+' beside the anchor if it has a sub-menu
+        if (!anchor.querySelector(".submenu-toggle")) {
+          const plus = document.createElement("span");
+          plus.textContent = " +";
+          plus.className = "submenu-toggle";
+          anchor.appendChild(plus);
+        }
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          subMenu.classList.toggle("active");
+        });
+      }
+    });
 });

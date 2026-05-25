@@ -23,22 +23,28 @@
 
 <?php require get_template_directory() . "/theme-parts/tours-parts/tour-info.php"; // Include the Information template. ?>
 
-<?php require get_template_directory() . "/theme-parts/tours-parts/tour-bar.php"; // Include the Bar template. ?>
+<?//php require get_template_directory() . "/theme-parts/tours-parts/tour-bar.php"; // Include the Bar template. ?>
 
 <?php require get_template_directory() . "/theme-parts/tours-parts/tour-details.php"; // Include the Details template. ?>
 
 <?php require get_template_directory() . "/theme-parts/tours-parts/tour-booking.php"; // Include the Booking template. ?>
 
+<?php if ( get_field( 'testimonials_toggle' ) == 1 ) : // Check if the testimonials toggle is enabled.
+  require get_template_directory() . "/theme-parts/tours-parts/tour-testimonials.php"; // Include the testimonials template.
+endif; ?>
+
+<?php require get_template_directory() . "/theme-parts/tours-parts/tour-request.php"; // Include the Request form template. ?>
+
 <?php if ( get_field( 'gallery_toggle' ) == 1 ) : // Check if the gallery toggle is enabled.
   require get_template_directory() . "/theme-parts/tours-parts/tour-gallery.php"; // Include the gallery template.
 endif; ?>
 
-<?php if ( get_field( 'vendors_toggle' ) == 1 ) : // Check if the vendors toggle is enabled.
-  require get_template_directory() . "/theme-parts/tours-parts/tour-vendors.php"; // Include the vendors template.
+<?php if ( get_field( 'faqs_toggle' ) == 1 ) : // Check if the FAQs toggle is enabled.
+  require get_template_directory() . "/theme-parts/tours-parts/tour-faq.php"; // Include the FAQs template.
 endif; ?>
 
-<?php if ( get_field( 'testimonials_toggle' ) == 1 ) : // Check if the testimonials toggle is enabled.
-  require get_template_directory() . "/theme-parts/tours-parts/tour-testimonials.php"; // Include the testimonials template.
+<?php if ( get_field( 'vendors_toggle' ) == 1 ) : // Check if the vendors toggle is enabled.
+  require get_template_directory() . "/theme-parts/tours-parts/tour-vendors.php"; // Include the vendors template.
 endif; ?>
 
 <?php require get_template_directory() . "/theme-parts/tours-parts/tour-groups.php"; // Include the groups template. ?>

@@ -1,6 +1,6 @@
 {
   "name": "acf/hero",
-  "title": "Hero",
+  "title": "Hero Slider",
   "description": "A block for a hero component.",
   "style": ["file:./hero.css"],
   "category": "formatting",

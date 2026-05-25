@@ -1,5 +1,6 @@
-.desktop-menu li {
-  @apply w-[calc(calc(100%/4)-calc(176px/2))] text-center;
+/* desktop menu specific styles */
+.desktop-menu > li {
+  @apply md:w-[calc(calc(100%/4)-calc(108px/2))] lg:w-[calc(calc(100%/4)-calc(176px/2))] text-center relative;
 }
 
 .menu-logo-item {
@@ -18,6 +19,36 @@
   @apply border-b-2 border-paprika;
 }
 
+/* desktop sub-menu styles */
+.desktop-menu > li > ul.sub-menu {
+  @apply invisible opacity-0 absolute pt-4 text-base w-full;
+}
+
+.desktop-menu > li:has(> ul.sub-menu) > a.menu-anchor {
+  @apply cursor-default;
+}
+
+.desktop-menu > li:hover > ul.sub-menu {
+  @apply visible opacity-100;
+}
+
+.desktop-menu > li > ul.sub-menu > li {
+  @apply bg-paprika-vivid flex flex-col items-center justify-center shadow-lg relative z-20;
+}
+
+.desktop-menu > li > ul.sub-menu > li:hover,
+.desktop-menu > li > ul.sub-menu > li.active {
+  @apply bg-paprika;
+}
+
+.desktop-menu > li > ul.sub-menu > li > a {
+  @apply text-white p-2;
+}
+
+.desktop-menu > li.highlighted > a {
+  @apply bg-honey text-white rounded-md px-3 pt-1 pb-2 hover:bg-honey-vivid transition-colors duration-300;
+}
+
 /* mobile menu specific styles */
 .mobile-menu-styles {
   @apply text-white fixed max-h-svh overflow-y-auto inset-x-0 top-0 z-10 flex flex-col divide-y divide-paprika-vivid rounded-b-md border-b border-paprika-vivid bg-paprika px-6 pb-6 pt-20 dark:divide-paprika-vivid dark:border-paprika-vivid dark:bg-paprika md:hidden;
@@ -25,6 +56,15 @@
 
 .mobile-menu-styles li {
   @apply py-2;
+}
+
+/* mobile sub-menu styles */
+.mobile-menu-styles > li > ul.sub-menu {
+  @apply invisible opacity-0 h-0 relative text-base w-full;
+}
+
+.mobile-menu-styles > li > ul.sub-menu.active {
+  @apply visible opacity-100 h-auto pt-2;
 }
 
 /* footer menu specific styles */

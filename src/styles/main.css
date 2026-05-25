@@ -20,6 +20,10 @@ Requires PHP: 7.4.3 or higher
 /* You can add global styles to this file, and also import other style files */
 
 /* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply font-main bg-white text-black;
 }
@@ -98,6 +102,10 @@ dd {
   @apply text-paprika border-b-2 border-paprika font-sans font-semibold antialiased lowercase hover:text-paprika-vivid hover:border-paprika-vivid transition-colors duration-300;
 }
 
+.wysiwyg a[title] {
+  @apply inline-flex btn btn-paprika border-b-0 text-white hover:text-white no-underline pt-1 #{!important};
+}
+
 .wysiwyg strong {
   @apply font-bold antialiased;
 }
@@ -115,7 +123,11 @@ dd {
   @apply list-[circle] list-inside indent-6;
 }
 
-.wysiwyg blockquote {
+.wp-singular .wysiwyg .block-faqs ul {
+  @apply list-none;
+}
+
+#faqs-block_050384b6f0012b1cfb23772299841fac > div > ul .wysiwyg blockquote {
   @apply pl-4 border-l-8 py-2 xl:py-4 border-paprika indent-4 font-sans font-semibold uppercase text-lg xl:text-3xl mb-2 xl:mb-4;
 }
 
@@ -127,6 +139,10 @@ dd {
 @layer components {
   .btn {
     @apply font-semibold font-sans tracking-wider rounded-md shadow-lg hover:shadow-xl transition flex w-fit lowercase text-lg xl:text-2xl duration-300 bg-caramel hover:bg-paprika border-[3px] border-transparent py-1 xl:py-2 px-4 xl:px-8 cursor-pointer;
+  }
+
+  .btn-paprika {
+    @apply bg-paprika hover:bg-paprika-vivid;
   }
 
   .btn.small {

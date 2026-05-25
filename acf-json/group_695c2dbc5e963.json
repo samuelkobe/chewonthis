@@ -1,0 +1,188 @@
+{
+    "key": "group_695c2dbc5e963",
+    "title": "GROUP: Stop(s) Options",
+    "fields": [
+        {
+            "key": "field_695c2d281183d",
+            "label": "Booking Card Options",
+            "name": "booking_card_options",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_695c2baeeb792",
+                    "label": "Details?",
+                    "name": "details",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Toggle card details <b>on<\/b> or <b>off<\/b>",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "allow_in_bindings": 0,
+                    "ui_on_text": "On",
+                    "ui_off_text": "Off",
+                    "ui": 1
+                },
+                {
+                    "key": "field_695c075d45a82",
+                    "label": "Number of stops",
+                    "name": "number_of_stops",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Set the number of stops for this experience.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695c2baeeb792",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "one": "1 curated stop",
+                        "two": "2 curated stops",
+                        "three": "3 curated stops",
+                        "four": "4 curated stops",
+                        "five": "5 curated stops",
+                        "six": "6 curated stops",
+                        "seven": "7 curated stops",
+                        "eight": "8 curated stops",
+                        "nine": "9 curated stops",
+                        "varies": "Varies"
+                    },
+                    "default_value": "varies",
+                    "return_format": "label",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0
+                },
+                {
+                    "key": "field_695c36e14a47b",
+                    "label": "Duration",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695c2baeeb792",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Duration already set in <b>Tour Settings<\/b> > <b>Info<\/b>.",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
+                },
+                {
+                    "key": "field_695c37224a47c",
+                    "label": "Start Time",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695c2baeeb792",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Start time already set in <b>Tour Settings<\/b> > <b>Info<\/b>.",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
+                },
+                {
+                    "key": "field_695c2c33eb793",
+                    "label": "Details off",
+                    "name": "",
+                    "aria-label": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_695c2baeeb792",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "<b>Duration<\/b>, <b>Start time<\/b>, and <b>Number of stops<\/b> details have been turned off.",
+                    "new_lines": "wpautop",
+                    "esc_html": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "!=",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 99,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1767651281
+}

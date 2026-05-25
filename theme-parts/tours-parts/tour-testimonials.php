@@ -18,7 +18,7 @@
 <style>
     <?php echo '#testimonials_' . $tour_id; ?> {
     .swiper-pagination-bullet {
-      background-color: #FFF;
+      background-color: #bf4427;
       width: 24px;
       height: 24px;
       opacity: 0;
@@ -39,11 +39,11 @@
   }
 </style>
 
-<section id="testimonials_<?php echo $tour_id; ?>" class="scroll-m-20 bg-caramel">
+<section id="testimonials_<?php echo $tour_id; ?>" class="scroll-m-20 bg-bread-vivid">
 
   <div class="py-12 xl:py-24">
 
-    <h2 class="heading-one text-center w-full mb-4 xl:mb-6 text-white">Testimonials</h2>
+    <h2 class="heading-one text-center w-full mb-4 xl:mb-6 text-paprika">Testimonials</h2>
     <div class="swiper swiper-<?php echo 'testimonials_' .$tour_id; ?> h-full editor-disable !pt-8 xl:!pt-16 !pb-16 xl:!pb-24 mb-8 xl:mb-16 relative">
 
       <?php
@@ -57,7 +57,7 @@
               // Generate the SVG star shapes
               $stars = '';
               for ($i = 1; $i <= $rating; $i++) {
-                  $stars .= '<svg class="w-4 fill-white" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m11.322 2.923c.126-.259.39-.423.678-.423.289 0 .552.164.678.423.974 1.998 2.65 5.44 2.65 5.44s3.811.524 6.022.829c.403.055.65.396.65.747 0 .19-.072.383-.231.536-1.61 1.538-4.382 4.191-4.382 4.191s.677 3.767 1.069 5.952c.083.462-.275.882-.742.882-.122 0-.244-.029-.355-.089-1.968-1.048-5.359-2.851-5.359-2.851s-3.391 1.803-5.359 2.851c-.111.06-.234.089-.356.089-.465 0-.825-.421-.741-.882.393-2.185 1.07-5.952 1.07-5.952s-2.773-2.653-4.382-4.191c-.16-.153-.232-.346-.232-.535 0-.352.249-.694.651-.748 2.211-.305 6.021-.829 6.021-.829s1.677-3.442 2.65-5.44z" fill-rule="nonzero"/></svg>';
+                  $stars .= '<svg class="w-4 fill-honey" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m11.322 2.923c.126-.259.39-.423.678-.423.289 0 .552.164.678.423.974 1.998 2.65 5.44 2.65 5.44s3.811.524 6.022.829c.403.055.65.396.65.747 0 .19-.072.383-.231.536-1.61 1.538-4.382 4.191-4.382 4.191s.677 3.767 1.069 5.952c.083.462-.275.882-.742.882-.122 0-.244-.029-.355-.089-1.968-1.048-5.359-2.851-5.359-2.851s-3.391 1.803-5.359 2.851c-.111.06-.234.089-.356.089-.465 0-.825-.421-.741-.882.393-2.185 1.07-5.952 1.07-5.952s-2.773-2.653-4.382-4.191c-.16-.153-.232-.346-.232-.535 0-.352.249-.694.651-.748 2.211-.305 6.021-.829 6.021-.829s1.677-3.442 2.65-5.44z" fill-rule="nonzero"/></svg>';
               }
             ?>
             <div class="flex flex-row items-center justify-between mb-4">
@@ -68,15 +68,15 @@
 
             <?php $testimonial_url = get_field( 'testimonial_url' ); ?>
             <?php if ( $testimonial_url ) : ?>
-              <a class="flex flex-col text-white items-center justify-center text-center relative" aria-label="Open <?php echo get_field( 'author' ); ?>'s testimonial." href="<?php echo esc_url( $testimonial_url['url'] ); ?>" target="<?php echo esc_attr( $testimonial_url['target'] ); ?>">
-                <div class="flex w-full justify-center fill-bread absolute -bottom-6" title="Open <?php echo get_field( 'author' ); ?>'s testimonial."> 
+              <a class="flex flex-col text-black items-center justify-center text-center relative" aria-label="Open <?php echo get_field( 'author' ); ?>'s testimonial." href="<?php echo esc_url( $testimonial_url['url'] ); ?>" target="<?php echo esc_attr( $testimonial_url['target'] ); ?>">
+                <div class="flex w-full justify-center fill-black absolute -bottom-6" title="Open <?php echo get_field( 'author' ); ?>'s testimonial."> 
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg>
                 </div>
                 <p class="font-main font-normal text-base"><?php echo $testimonial_text; ?></p>
                 <span class="mt-2">- <?php echo get_field( 'author' ); ?></span>
               </a>
             <?php else: ?>
-              <div class="flex flex-col text-white items-center justify-center text-center">
+              <div class="flex flex-col text-black items-center justify-center text-center">
                 <p class="font-main font-normal text-base"><?php echo $testimonial_text; ?></p>
                 <span class="mt-2">- <?php echo get_field( 'author' ); ?></span>
               </div>

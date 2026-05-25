@@ -84,7 +84,7 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": 32,
+            "maxlength": "",
             "allow_in_bindings": 0,
             "placeholder": "Drink, Eat, Relax",
             "prepend": "",
@@ -105,15 +105,15 @@
                 "id": ""
             },
             "choices": {
-                "walking": "Walking Tour",
-                "ebike": "E-Bike Tour",
+                "walking": "Local Host Experience",
+                "ebike": "E-Bike Experience",
                 "self": "Self Driven",
-                "chauffeur": "Chauffeur Driven",
-                "driven-combo": "Self Driven or Chauffeur Driven",
+                "chauffeur": "Chauffeured",
+                "driven-combo": "Self Driven or Chauffeured",
                 "chef": "Chef Hosted",
-                "multi-1": "Walking or Chauffeur",
-                "multi-2": "Walking, Chauffeur, or E-Bike",
-                "multi-3": "Self Driven, Chauffeur, or E-Bike"
+                "multi-1": "Walking or Chauffeured",
+                "multi-2": "Walking, Chauffeured, or E-Bike",
+                "multi-3": "Self Driven, Chauffeured, or E-Bike"
             },
             "default_value": "walking",
             "return_format": "label",
@@ -122,7 +122,9 @@
             "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_66d2059952630",
@@ -141,6 +143,27 @@
             "message": "Remember to add a <b>Location<\/b> taxonomy in the sidebar. <br><br>Max 1 <b>Location<\/b> per Tour.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_6959c62e8f623",
+            "label": "Short Description",
+            "name": "short_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Add a short description of this experience (Max 300 Characters).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 333,
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
         },
         {
             "key": "field_66d23f48cada4",
@@ -166,7 +189,7 @@
             "name": "duration",
             "aria-label": "",
             "type": "select",
-            "instructions": "Set the duration of the tour.",
+            "instructions": "Set the duration of the experience.",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -205,7 +228,9 @@
             "allow_in_bindings": 0,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_677c737fb078d",
@@ -387,12 +412,12 @@
         },
         {
             "key": "field_66d2422b22b7e",
-            "label": "Tour Type",
+            "label": "Experience Type",
             "name": "tour_type",
             "aria-label": "",
-            "type": "select",
+            "type": "checkbox",
             "instructions": "Choose the Tour Type to be displayed in the information area on the Tour page.",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -400,20 +425,22 @@
                 "id": ""
             },
             "choices": {
-                "chauffeur": "Chauffeur Guided",
-                "chef": "Chef Guided",
-                "digital": "Itinerary Guided",
-                "various": "Various Guided Options",
-                "vip": "Host Guided"
+                "private": "Private",
+                "chauffeur": "Chauffeured",
+                "chef": "Chef Hosted",
+                "digital": "Signature Itinerary",
+                "vip": "Hosted",
+                "request": "By Request",
+                "group": "Group Option(s)"
             },
-            "default_value": "digital",
-            "return_format": "label",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
+            "default_value": [],
+            "return_format": "array",
+            "allow_custom": 0,
+            "allow_in_bindings": 1,
+            "layout": "horizontal",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         },
         {
             "key": "field_66d23f51cada5",
@@ -496,8 +523,211 @@
                     "tabs": "visual",
                     "toolbar": "basic",
                     "media_upload": 0,
-                    "delay": 1,
+                    "delay": 0,
                     "parent_repeater": "field_66d268f03cb3b"
+                },
+                {
+                    "key": "field_6a1465b90229e",
+                    "label": "Flexible Experience Information",
+                    "name": "flexible_experience_information",
+                    "aria-label": "",
+                    "type": "flexible_content",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layouts": {
+                        "layout_6a1465c0e7c39": {
+                            "key": "layout_6a1465c0e7c39",
+                            "name": "test_layout",
+                            "label": "Test Layout",
+                            "display": "block",
+                            "sub_fields": [],
+                            "min": "",
+                            "max": ""
+                        }
+                    },
+                    "min": "",
+                    "max": "",
+                    "button_label": "Add Row",
+                    "parent_repeater": "field_66d268f03cb3b"
+                }
+            ]
+        },
+        {
+            "key": "field_68ac78d27ab29",
+            "label": "FAQs",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_68ac8679c4c6e",
+            "label": "FAQs?",
+            "name": "faqs_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Turn FAQs 'On' or 'Off'",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
+            "key": "field_68ac8305f35c5",
+            "label": "Heading",
+            "name": "heading_faqs",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68ac8679c4c6e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_68ac8323f35c6",
+            "label": "Content",
+            "name": "content_faqs",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68ac8679c4c6e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_68ac82d19da8c",
+            "label": "FAQs",
+            "name": "experience_faqs",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_68ac8679c4c6e",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 1,
+            "max": 0,
+            "collapsed": "field_68ac82d19da8d",
+            "button_label": "Add FAQ",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_68ac82d19da8d",
+                    "label": "Question",
+                    "name": "question",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_68ac82d19da8c"
+                },
+                {
+                    "key": "field_68ac82d19da8e",
+                    "label": "Answer",
+                    "name": "answer",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 1,
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1,
+                    "parent_repeater": "field_68ac82d19da8c"
                 }
             ]
         },
@@ -562,6 +792,45 @@
             "append": ""
         },
         {
+            "key": "field_695d52c2bbc23",
+            "label": "Subheading",
+            "name": "subheading_booking",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add a optional subheading (Max 300 characters). If it is left empty it will simply not appear.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 333,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6849f6280fab5",
+            "label": "Booking Details",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_66d3d0ec5b57c",
             "label": "Content",
             "name": "content_single_booking",
@@ -618,7 +887,7 @@
         },
         {
             "key": "field_66d3d11ca6ff9",
-            "label": "Tours Bookings Options",
+            "label": "Experience Bookings Options",
             "name": "various_bookings_options",
             "aria-label": "",
             "type": "flexible_content",
@@ -639,15 +908,107 @@
                 "id": ""
             },
             "layouts": {
+                "layout_684b5ac8a53e0": {
+                    "key": "layout_684b5ac8a53e0",
+                    "name": "private_guided",
+                    "label": "Private",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_684b5ac9a53e1",
+                            "label": "Booking Info",
+                            "name": "booking_info",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1
+                        },
+                        {
+                            "key": "field_695c2e9d0f977",
+                            "label": "Stop(s) Options",
+                            "name": "stops_options",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_695c2dbc5e963"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_684b5ac9a53e2",
+                            "label": "Private URL",
+                            "name": "private_guided_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "Paste the FareHarbor booking URL here.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_684b5ac9a53e3",
+                            "label": "Private Off Season",
+                            "name": "private_guided_off_season",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Toggle buttons booking buttons on or off depending on the season.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "0",
+                    "max": "1"
+                },
                 "layout_66d3d124d5d91": {
                     "key": "layout_66d3d124d5d91",
                     "name": "digitally_guided",
-                    "label": "Itinerary Guided",
+                    "label": "Signature Itinerary",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_66d3d1f3a6ffa",
-                            "label": "Itinerary Guided Tour Option",
+                            "label": "Signature Itinerary Experience Option",
                             "name": "",
                             "aria-label": "",
                             "type": "message",
@@ -659,7 +1020,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "This is the default booking option and must always accompany a Tour that uses the <b>Tours Options<\/b> booking type.",
+                            "message": "This is the default booking option and must always accompany a Experience that uses the <b>Experience Options<\/b> booking type.",
                             "new_lines": "br",
                             "esc_html": 0
                         },
@@ -685,8 +1046,30 @@
                             "delay": 1
                         },
                         {
+                            "key": "field_695c2f9141604",
+                            "label": "Stop(s) Options",
+                            "name": "stops_options",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_695c2dbc5e963"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_66d3d326e966e",
-                            "label": "Itinerary Guided URL",
+                            "label": "Signature Itinerary URL",
                             "name": "digitally_guided_url",
                             "aria-label": "",
                             "type": "url",
@@ -704,11 +1087,11 @@
                         },
                         {
                             "key": "field_6700bd818a40c",
-                            "label": "Itinerary Guided Off Season",
+                            "label": "Signature Itinerary Off Season",
                             "name": "digitally_guided_off_season",
                             "aria-label": "",
                             "type": "true_false",
-                            "instructions": "Toggle buttons booking buttons on or off depending on the season.",
+                            "instructions": "Toggle booking button on or off depending on the season.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -730,7 +1113,7 @@
                 "layout_66d3d38ae966f": {
                     "key": "layout_66d3d38ae966f",
                     "name": "vip_guided",
-                    "label": "Host Guided",
+                    "label": "Hosted",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -755,8 +1138,30 @@
                             "delay": 1
                         },
                         {
+                            "key": "field_695c2f9941605",
+                            "label": "Stop(s) Options",
+                            "name": "stops_options",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_695c2dbc5e963"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_66d3d38ae9672",
-                            "label": "Host Guided URL",
+                            "label": "Hosted URL",
                             "name": "vip_guided_url",
                             "aria-label": "",
                             "type": "url",
@@ -774,7 +1179,7 @@
                         },
                         {
                             "key": "field_6700be11a5e5f",
-                            "label": "Host Guided Off Season",
+                            "label": "Hosted Off Season",
                             "name": "vip_guided_off_season",
                             "aria-label": "",
                             "type": "true_false",
@@ -800,7 +1205,7 @@
                 "layout_66d3d3bce9673": {
                     "key": "layout_66d3d3bce9673",
                     "name": "e-bike_tour",
-                    "label": "E-Bike Tour",
+                    "label": "E-Bike",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -825,8 +1230,30 @@
                             "delay": 1
                         },
                         {
+                            "key": "field_695c2fd741607",
+                            "label": "Stop(s) Options",
+                            "name": "stops_options",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_695c2dbc5e963"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_66d3d3bce9675",
-                            "label": "E-Bike Guided URL",
+                            "label": "E-Bike URL",
                             "name": "ebike_guided_url",
                             "aria-label": "",
                             "type": "url",
@@ -844,11 +1271,11 @@
                         },
                         {
                             "key": "field_6700be38a5e60",
-                            "label": "E-Bike Guided Off Season",
+                            "label": "E-Bike Off Season",
                             "name": "ebike_guided_off_season",
                             "aria-label": "",
                             "type": "true_false",
-                            "instructions": "Toggle buttons booking buttons on or off depending on the season.",
+                            "instructions": "Toggle booking button on or off depending on the season.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -870,7 +1297,7 @@
                 "layout_66d3d3e3e9676": {
                     "key": "layout_66d3d3e3e9676",
                     "name": "chauffeur_guided",
-                    "label": "Chauffeur Guided",
+                    "label": "Chauffeured",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -895,12 +1322,34 @@
                             "delay": 1
                         },
                         {
+                            "key": "field_695c2fc441606",
+                            "label": "Stop(s) Options",
+                            "name": "stops_options",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_695c2dbc5e963"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_66d3d3e3e9678",
-                            "label": "Chauffeur Guided URL",
+                            "label": "Chauffeured URL",
                             "name": "chauffeur_guided_url",
                             "aria-label": "",
                             "type": "url",
-                            "instructions": "Paste the FareHarbor booking URL here.",
+                            "instructions": "Paste the booking URL here.",
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -914,11 +1363,294 @@
                         },
                         {
                             "key": "field_6700be5ba5e61",
-                            "label": "Chauffeur Guided Off Season",
+                            "label": "Chauffeured Off Season",
                             "name": "chauffeur_guided_off_season",
                             "aria-label": "",
                             "type": "true_false",
-                            "instructions": "Toggle buttons booking buttons on or off depending on the season.",
+                            "instructions": "Toggle booking button on or off depending on the season.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "0",
+                    "max": "1"
+                },
+                "layout_6877d21617c5f": {
+                    "key": "layout_6877d21617c5f",
+                    "name": "by_request",
+                    "label": "By Request",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6877d21617c60",
+                            "label": "By Request Option",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This is the By Request booking option type for experiences.",
+                            "new_lines": "br",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_6877d21617c61",
+                            "label": "Booking Info",
+                            "name": "booking_info",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1
+                        },
+                        {
+                            "key": "field_695c2fea41608",
+                            "label": "Stop(s) Options",
+                            "name": "stops_options",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_695c2dbc5e963"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6878012e5cfdc",
+                            "label": "<h3>Request Form<\/h3>",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Request Form Options. This will appear below the booking options on the single experience page if a contact form [short_code] is added.",
+                            "new_lines": "br",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_687800d0dd91b",
+                            "label": "Request form heading",
+                            "name": "request_form_heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Request",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "for [Experience name]"
+                        },
+                        {
+                            "key": "field_687822c1e1869",
+                            "label": "Request instructions",
+                            "name": "request_instructions",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Please reach out for availability.",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": 4,
+                            "placeholder": "",
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_6877d21617c62",
+                            "label": "By Request Form",
+                            "name": "request_form",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "Paste the booking form here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "[contact-form-7 id=\"19e7d91\" title=\"Request Experience\"]",
+                            "allow_in_bindings": 0,
+                            "tabs": "text",
+                            "media_upload": 0,
+                            "toolbar": "full",
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_69ab3440f0d75",
+                            "label": "Request Button Text",
+                            "name": "request_button_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Request Experience",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "0",
+                    "max": "1"
+                },
+                "layout_682d138735448": {
+                    "key": "layout_682d138735448",
+                    "name": "group_option",
+                    "label": "Group Option(s)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_682d138735449",
+                            "label": "Group Experience Option",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This is the group booking option type for experiences.",
+                            "new_lines": "br",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_682d13873544a",
+                            "label": "Booking Info",
+                            "name": "booking_info",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 1
+                        },
+                        {
+                            "key": "field_695c2ffd41609",
+                            "label": "Stop(s) Options",
+                            "name": "stops_options",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_695c2dbc5e963"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_682d13873544b",
+                            "label": "Group URL",
+                            "name": "group_url",
+                            "aria-label": "",
+                            "type": "url",
+                            "instructions": "Paste the booking URL here.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_682d13873544c",
+                            "label": "Group Off Season",
+                            "name": "group_off_season",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Toggle booking button on or off depending on the season.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -941,6 +1673,38 @@
             "min": "",
             "max": "",
             "button_label": "Add Option"
+        },
+        {
+            "key": "field_695c18a1382d3",
+            "label": "Hero Button Override",
+            "name": "hero_button_override",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "You can override the 'CHOOSE YOUR EXPERIENCE' button in the hero and have the 'HOSTED' etc. button instead. It is advised to only use this override when there is a single booking type. If there are more than 1 type below, leave this off.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_66d3cfa35b579",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "on": "Override Button",
+                "off": "Off"
+            },
+            "default_value": "off",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
         },
         {
             "key": "field_66d220e93fbe5",
@@ -1272,6 +2036,27 @@
             "selected": 0
         },
         {
+            "key": "field_6a1463422fc1c",
+            "label": "Group Info?",
+            "name": "group_info_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Toggle Group information 'On' or 'Off'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui_on_text": "On",
+            "ui_off_text": "Off",
+            "ui": 1
+        },
+        {
             "key": "field_66d22b4df360b",
             "label": "Heading",
             "name": "heading",
@@ -1279,7 +2064,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6a1463422fc1c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1300,7 +2093,15 @@
             "type": "textarea",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6a1463422fc1c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -1324,7 +2125,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_66d207546dcc5",
+                        "field": "field_6a1463422fc1c",
                         "operator": "==",
                         "value": "1"
                     }
@@ -1337,6 +2138,440 @@
             },
             "return_format": "array",
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_schema_tab_001",
+            "label": "Schema",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_schema_offers_001",
+            "label": "Schema Offers",
+            "name": "schema_offers",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add each bookable offer for this experience. Used in Product schema markup. If left empty, the system will use the starting cost as a single offer.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 10,
+            "collapsed": "field_schema_offer_name_001",
+            "button_label": "Add Offer",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_schema_offer_name_001",
+                    "label": "Offer Name",
+                    "name": "offer_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "e.g. Signature Itinerary, Hosted, Private",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_schema_offers_001"
+                },
+                {
+                    "key": "field_schema_offer_price_001",
+                    "label": "Price (CAD)",
+                    "name": "offer_price",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 0,
+                    "max": "",
+                    "step": "0.01",
+                    "placeholder": "",
+                    "prepend": "$",
+                    "append": "CAD",
+                    "parent_repeater": "field_schema_offers_001"
+                },
+                {
+                    "key": "field_schema_offer_url_001",
+                    "label": "Booking URL",
+                    "name": "offer_url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https:\/\/",
+                    "parent_repeater": "field_schema_offers_001"
+                },
+                {
+                    "key": "field_schema_offer_avail_001",
+                    "label": "Availability",
+                    "name": "offer_availability",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "InStock": "In Stock",
+                        "SoldOut": "Sold Out",
+                        "PreOrder": "Pre-Order"
+                    },
+                    "default_value": "InStock",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_schema_offers_001",
+                    "create_options": 0,
+                    "save_options": 0
+                }
+            ]
+        },
+        {
+            "key": "field_schema_events_toggle_001",
+            "label": "Has Specific Event Dates?",
+            "name": "schema_events_toggle",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Enable this for experiences with specific scheduled public dates (e.g. Rooted). This will generate Event schema for each date.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "message": "",
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_schema_events_001",
+            "label": "Event Dates",
+            "name": "schema_events",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add each scheduled public date for this experience.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_schema_events_toggle_001",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 20,
+            "collapsed": "field_schema_event_date_001",
+            "button_label": "Add Event Date",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_schema_event_date_001",
+                    "label": "Date",
+                    "name": "event_date",
+                    "aria-label": "",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y",
+                    "return_format": "Y-m-d",
+                    "first_day": 0,
+                    "parent_repeater": "field_schema_events_001",
+                    "default_to_current_date": 0
+                },
+                {
+                    "key": "field_schema_event_start_001",
+                    "label": "Start Time",
+                    "name": "event_start_time",
+                    "aria-label": "",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "H:i:s",
+                    "parent_repeater": "field_schema_events_001"
+                },
+                {
+                    "key": "field_schema_event_end_001",
+                    "label": "End Time",
+                    "name": "event_end_time",
+                    "aria-label": "",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "g:i a",
+                    "return_format": "H:i:s",
+                    "parent_repeater": "field_schema_events_001"
+                },
+                {
+                    "key": "field_schema_event_booking_001",
+                    "label": "Booking URL",
+                    "name": "event_booking_url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https:\/\/",
+                    "parent_repeater": "field_schema_events_001"
+                }
+            ]
+        },
+        {
+            "key": "field_schema_event_location_001",
+            "label": "Event Location",
+            "name": "schema_event_location",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Venue and address details for Event schema.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_schema_events_toggle_001",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_schema_venue_name_001",
+                    "label": "Venue Name",
+                    "name": "venue_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_schema_street_001",
+                    "label": "Street Address",
+                    "name": "street_address",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_schema_city_001",
+                    "label": "City",
+                    "name": "city",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_schema_region_001",
+                    "label": "Region",
+                    "name": "region",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "BC",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_schema_postal_001",
+                    "label": "Postal Code",
+                    "name": "postal_code",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_schema_country_001",
+                    "label": "Country",
+                    "name": "country",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "CA",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_schema_performer_001",
+            "label": "Performer \/ Host Name",
+            "name": "schema_performer",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Name of the person leading the event (used in Event schema).",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_schema_events_toggle_001",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -1359,5 +2594,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742418143
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1779721708
 }

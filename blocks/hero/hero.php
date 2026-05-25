@@ -25,19 +25,38 @@ if ( ! empty( $block['align'] ) ) {
     $classes .= ' align' . $block['align'];
 }
 
-// Query the tours post type
-$args = array(
-  'post_type'       => 'tour', // Tours post type
-  'posts_per_page'  => -1, // Set to -1 to show all events
-	'tax_query' => array(
-        array(
-            'taxonomy' => 'location', // Replace 'location' with your actual taxonomy name
-            'field' => 'slug',
-            'operator' => 'EXISTS'
-        )
-    )
-);
-$query = new WP_Query($args); // run the query.
+// Check if using manual selection or all tours
+$use_manual_selection = get_field( 'manual_experience_selection' );
+$tours_to_display = array();
+
+if ( $use_manual_selection ) {
+	// Use relationship field for manual tour selection
+	$selected_tours = get_field( 'feature_experiences' );
+	if ( $selected_tours ) {
+		$tours_to_display = $selected_tours;
+	}
+} else {
+	// Query all tours (original method)
+	$args = array(
+		'post_type'       => 'tour', // Tours post type
+		'posts_per_page'  => -1, // Set to -1 to show all events
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'location', // Replace 'location' with your actual taxonomy name
+				'field' => 'slug',
+				'operator' => 'EXISTS'
+			)
+		)
+	);
+	$query = new WP_Query($args);
+	if ( $query->have_posts() ) {
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			$tours_to_display[] = get_post();
+		}
+		wp_reset_postdata();
+	}
+}
 $thumbnail_url = 'temp'
 
 ?>
@@ -83,7 +102,7 @@ $thumbnail_url = 'temp'
 
 <section id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $classes ); ?> bg-bread-vivid">
 
-	<div class="container md:py-6 xl:pb-24 mx-auto">
+	<div class="container md:py-6 xl:py-24 mx-auto">
 		<div class="grid grid-cols-[64px_minmax(0,_auto)_64px] grid-rows-[120px_20dvh_20dvh_120px] md:grid-rows-[120px_24dvh_24dvh_120px] [grid-template-areas:'slider_slider_slider''slider_slider_slider''slider_slider_slider''slider_slider_slider'] md:[grid-template-areas:'social_slider_empty''social_slider_empty''arrow_slider_empty''arrow_slider_empty'] w-full h-full">
 
 			<div class="[grid-area:social/social] hidden md:flex justify-end px-6">
@@ -95,42 +114,46 @@ $thumbnail_url = 'temp'
 			<div class="[grid-area:slider/slider] flex">
 				<div class="flex w-full h-full">
 					<div class="swiper swiper-<?php echo $id; ?> h-full editor-disable">
-						<?php if ($query->have_posts()) : ?>
+						<?php if ( ! empty( $tours_to_display ) ) : ?>
 							<div class="swiper-wrapper w-full h-full">
-								<?php while ($query->have_posts()) : ?>
+								<?php foreach ( $tours_to_display as $post ) : ?>
 
-									<?php $query->the_post();
+									<?php
+									setup_postdata( $post );
 									// Get the post, ACF fields and taxonomies
-									$tour_title = get_post_meta( get_the_ID(), 'title', true );
-									$location_terms = get_the_terms( get_the_ID(), 'location' );
-									$permalink = get_permalink();
+									$tour_title = get_field( 'title', $post->ID );
+									$location_terms = get_the_terms( $post->ID, 'location' );
+									$permalink = get_permalink( $post->ID );
+									$locations = '';
 									// Check if there are any location terms
 									if ( ! empty( $location_terms ) ) {
 										// Display the location terms
 										$location_names = array();
 										foreach ( $location_terms as $term ) {
-												$location_names[] = $term->name;
+											$location_names[] = $term->name;
 										}
 										$locations = implode(', ', $location_names);
-										}
-										?>
+									}
+									// Create display title
+									$display_title = ! empty( $locations ) ? $locations . ': ' . $tour_title : $tour_title;
+									?>
 
 									<div class="swiper-slide flex items-center h-full w-full relative">
-										<a href="<?php echo $permalink; ?>" title="Explore <?php echo $locations . ': ' . $tour_title; ?>" aria-label="Explore <?php echo $locations . ': ' . $tour_title; ?>">
-											<?php the_post_thumbnail( 'full', array( 'class' => 'w-full h-full object-cover mix-blend-multiply' ) ); ?>
+										<a href="<?php echo $permalink; ?>" title="Explore <?php echo $display_title; ?>" aria-label="Explore <?php echo $display_title; ?>">
+											<?php echo get_the_post_thumbnail( $post->ID, 'full', array( 'class' => 'w-full h-full object-cover mix-blend-multiply' ) ); ?>
 											<div class="absolute inset-0 w-full h-full bg-black opacity-50"></div>
 											<div class="absolute left-0 bottom-12 md:bottom-0 pl-12 py-6">
-												<span class="antialiased font-condensed font-bold text-3xl uppercase text-white tracking-widest [text-shadow:1px_1px_2px_rgba(2,2,2,0.25),0_0_1em_rgba(2,2,2,0.25),0_0_0.2em_rgba(2,2,2,0.25)]"><?php echo $locations . ': ' . $tour_title; ?></span>
+												<span class="antialiased font-condensed font-bold text-3xl uppercase text-white tracking-widest [text-shadow:1px_1px_2px_rgba(2,2,2,0.25),0_0_1em_rgba(2,2,2,0.25),0_0_0.2em_rgba(2,2,2,0.25)]"><?php echo $display_title; ?></span>
 											</div>
 										</a>
 									</div>
-								<?php endwhile; ?>
+								<?php endforeach; ?>
+								<?php wp_reset_postdata(); ?>
 							</div>
 						<?php else :
 							// No posts found
 							echo 'No tours found.';
-						endif;
-						wp_reset_postdata(); ?>
+						endif; ?>
 						
 						<div class="relative bottom-4 md:bottom-24 left-0 right-0 w-48 mx-auto">
 							<!-- <div class="swiper-button-prev absolute left-0"></div> -->

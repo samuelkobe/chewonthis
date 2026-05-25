@@ -80,7 +80,7 @@ if ( ! empty( $block['align'] ) ) {
 						<a class="w-fit inline-block" href="<?php echo esc_url( $link['url'] ); ?>" aria-label="<?php echo esc_html( $link['title'] ); ?>" title="Visit: <?php echo esc_html( $link['title'] ); ?>" target="<?php echo esc_attr( $link['target'] ); ?>">
 							<?php $logo = get_sub_field( 'logo' ); ?>
 							<?php if ( $logo ) : ?>
-								<img class="w-24 object-cover aspect-square" src="<?php echo esc_url( $logo['url'] ); ?>" alt="<?php echo esc_html( $link['title'] ); ?> logo or icon" />
+								<img class="w-24 max-h-24 object-cover aspect-square" src="<?php echo esc_url( $logo['url'] ); ?>" alt="<?php echo esc_html( $link['title'] ); ?> logo or icon" />
 							<?php endif; ?>
 						</a>
 					<?php endif; ?>
@@ -104,45 +104,44 @@ if ( ! empty( $block['align'] ) ) {
 <script type="module">
   import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
+  // Count the number of slides
+  const slideCount = document.querySelectorAll('.swiper-<?php echo $id; ?> .swiper-slide').length;
+  // Set the maximum slidesPerView from breakpoints
+  const maxSlidesPerView = 12;
+  // Only enable loop if there are more slides than the maximum slidesPerView
+  const enableLoop = slideCount > maxSlidesPerView;
+
   const swiper = new Swiper('.swiper-<?php echo $id; ?>', {
-  // Optional parameters
-	loop: true,
-	initialSlide: 2,
-  slidesPerView: 3,
+	loop: enableLoop,
+	initialSlide: Math.floor(slideCount / 2),
+	slidesPerView: 3,
 	centeredSlides: true,
 	autoplay: {
-		delay: 4000,
+	  delay: 4000,
 	},
-	
-  // navigation: {
-  //   nextEl: '.swiper-button-next',
-  //   prevEl: '.swiper-button-prev',
-  // },
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-		dynamicBullets: true,
-		dynamicMainBullets: 1,
-    clickable: true
-  },
+	// navigation: {
+	//   nextEl: '.swiper-button-next',
+	//   prevEl: '.swiper-button-prev',
+	// },
+	pagination: {
+	  el: '.swiper-pagination',
+	  dynamicBullets: true,
+	  dynamicMainBullets: 1,
+	  clickable: true
+	},
 	breakpoints: {
-		// when window width is >= 768px
-		768: {
-			slidesPerView: 4,
-		},
-		// when window width is >= 1024px
-		1024: {
-			slidesPerView: 6,
-		},
-		// when window width is >= 1280px
-		1280: {
-			slidesPerView: 8,
-		},
-		// when window width is >= 1280px
-		1920: {
-			slidesPerView: 12,
-		},
+	  768: {
+		slidesPerView: 4,
+	  },
+	  1024: {
+		slidesPerView: 6,
+	  },
+	  1280: {
+		slidesPerView: 8,
+	  },
+	  1920: {
+		slidesPerView: 12,
+	  },
 	}
-});
+  });
 </script>

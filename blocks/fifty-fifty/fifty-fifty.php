@@ -35,11 +35,11 @@ if ( ! empty( $block['align'] ) ) {
 <?php
 	// Get the colour scheme
 	// Styles so they appear in the CSS aspect-square aspect-video aspect-portrait aspect-landscape
+	$block_section_y_padding = 'last:pb-16';
 	if ( is_single() ) : // Checking to see if the page is blog post
 		$heading_tag = 'h2';
 		$subheading_tag = 'h3';
 		$block_y_padding = 'pb-8 md:pt-20';
-		$block_section_y_padding = 'last:pb-16';
 	else :
 		$heading_tag = 'h1';
 		$subheading_tag = 'h2';
