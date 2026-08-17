@@ -982,6 +982,59 @@
             "selected": 0
         },
         {
+            "key": "field_6a3d478001001",
+            "label": "Tours Filter?",
+            "name": "tours_filter_toggle",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "Toggle the location, duration, and experience type filter dropdowns on the Tours archive page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "on": "On",
+                "off": "Off"
+            },
+            "default_value": "on",
+            "return_format": "value",
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_6a3d478001002",
+            "label": "Filter Off – Description Text",
+            "name": "tours_filter_off_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "When the filter is turned off, this text replaces the site tagline next to the filter row.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6a3d478001001",
+                        "operator": "==",
+                        "value": "off"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "75",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": 3,
+            "placeholder": "Enter a description to display when filters are hidden…",
+            "new_lines": "br"
+        },
+        {
             "key": "field_66d3d87732a0e",
             "label": "Tour Contact Info",
             "name": "",
@@ -1453,5 +1506,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1778180580
+    "modified": 1782405636
 }

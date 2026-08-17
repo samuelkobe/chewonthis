@@ -21,6 +21,8 @@
 
 <?php require get_template_directory() . "/theme-parts/tours-parts/tour-hero.php"; // Include the Hero template. ?>
 
+<?php require get_template_directory() . "/theme-parts/tours-parts/tour-flexible-content.php"; // Include the Flexible Content template. ?>
+
 <?php require get_template_directory() . "/theme-parts/tours-parts/tour-info.php"; // Include the Information template. ?>
 
 <?//php require get_template_directory() . "/theme-parts/tours-parts/tour-bar.php"; // Include the Bar template. ?>

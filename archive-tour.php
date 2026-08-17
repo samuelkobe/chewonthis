@@ -49,8 +49,13 @@
 				<?php endif; ?>
 			</div>
 		</section>
+		<?php
+			$tours_filter_on       = get_field( 'tours_filter_toggle', 'option' ) !== 'off';
+			$tours_filter_off_text = get_field( 'tours_filter_off_text', 'option' );
+		?>
+		<?php if ( $tours_filter_on ) : ?>
 		<section class="container mx-auto bg-[#ffffff] shadow-md px-6 md:px-12 py-6 md:py-12 md:rounded-xl transform md:-translate-y-20 xl:-translate-y-24 relative z-[5]" aria-label="filter wrapper">
-			<div class="w-full container mx-auto grid grid-cols-12 gap-4 xl:gap-8"> 
+			<div class="w-full container mx-auto grid grid-cols-12 gap-4 xl:gap-8">
 				<div class="col-span-10 lg:col-span-6 2xl:col-span-5 flex items-center mb-2 lg:mb-0">
 					<p class="text-xl sm:text-2xl 2xl:text-4xl font-sans font-normal text-clay lowercase"><?php bloginfo('description'); ?></p>
 				</div>
@@ -65,8 +70,12 @@
 				</div>
 			</div>
 		</section>
-		<section class="px-6 py-12 md:pt-0 xl:pb-24">
+		<?php endif; ?>
+		<section class="px-6 xl:pb-24 <?php echo $tours_filter_on ? 'py-12 md:pt-0' : 'pt-12 md:pt-16 xl:pt-20 pb-12'; ?>">
 			<div class="container mx-auto">
+				<?php if ( ! $tours_filter_on && $tours_filter_off_text ) : ?>
+					<p class="font-main font-normal text-clay text-lg md:text-xl xl:text-2xl leading-snug border-b border-clay/30 my-12 pb-6 w-fit"><?php echo wp_kses_post( $tours_filter_off_text ); ?></p>
+				<?php endif; ?>
 				<?php if ($the_query->have_posts()) : ?>
 					<div class="grid grid-cols-12 gap-y-8 sm:gap-8 2xl:gap-16">
 						<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>

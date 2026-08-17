@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./**/*.php", "./**/*.css"],
+  content: ["./**/*.php", "./src/**/*.css"],
   theme: {
     extend: {
       aspectRatio: {

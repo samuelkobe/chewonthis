@@ -113,7 +113,10 @@
                 "chef": "Chef Hosted",
                 "multi-1": "Walking or Chauffeured",
                 "multi-2": "Walking, Chauffeured, or E-Bike",
-                "multi-3": "Self Driven, Chauffeured, or E-Bike"
+                "multi-3": "Self Driven, Chauffeured, or E-Bike",
+                "indigenous": "Indigenous-Led Gathering",
+                "hosted": "Hosted Experience",
+                "global": "Global Kitchen Experience"
             },
             "default_value": "walking",
             "return_format": "label",
@@ -164,6 +167,140 @@
             "rows": 3,
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_6a15b317dbaa4",
+            "label": "Flexible Content",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_6a1465b90229e",
+            "label": "Flexible Experience Information",
+            "name": "flexible_experience_information",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_6b4f8a2c1d9e3": {
+                    "key": "layout_6b4f8a2c1d9e3",
+                    "name": "linked_badge",
+                    "label": "Linked Badge",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6b4f8a2c1d9e4",
+                            "label": "Title",
+                            "name": "badge_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Add an optional title for this badge section.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_6b4f8a2c1d9e5",
+                            "label": "Content",
+                            "name": "badge_content",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "Add optional context or description alongside the badge.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": 3,
+                            "placeholder": "",
+                            "new_lines": "br"
+                        },
+                        {
+                            "key": "field_6b4f8a2c1d9e6",
+                            "label": "Badge Image",
+                            "name": "badge_image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Upload the badge or logo image.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "allow_in_bindings": 0,
+                            "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_6b4f8a2c1d9e7",
+                            "label": "Badge Link",
+                            "name": "badge_url",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "Add the URL and link text for this badge. The link text will appear as a clickable label beneath the badge image. If left blank, it will default to 'Learn more about [Tour Title]'.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "allow_in_bindings": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row",
+            "parent_repeater": "field_66d268f03cb3b"
         },
         {
             "key": "field_66d23f48cada4",
@@ -431,7 +568,8 @@
                 "digital": "Signature Itinerary",
                 "vip": "Hosted",
                 "request": "By Request",
-                "group": "Group Option(s)"
+                "group": "Group Option(s)",
+                "indigenous": "Indigenous-Led"
             },
             "default_value": [],
             "return_format": "array",
@@ -524,36 +662,6 @@
                     "toolbar": "basic",
                     "media_upload": 0,
                     "delay": 0,
-                    "parent_repeater": "field_66d268f03cb3b"
-                },
-                {
-                    "key": "field_6a1465b90229e",
-                    "label": "Flexible Experience Information",
-                    "name": "flexible_experience_information",
-                    "aria-label": "",
-                    "type": "flexible_content",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layouts": {
-                        "layout_6a1465c0e7c39": {
-                            "key": "layout_6a1465c0e7c39",
-                            "name": "test_layout",
-                            "label": "Test Layout",
-                            "display": "block",
-                            "sub_fields": [],
-                            "min": "",
-                            "max": ""
-                        }
-                    },
-                    "min": "",
-                    "max": "",
-                    "button_label": "Add Row",
                     "parent_repeater": "field_66d268f03cb3b"
                 }
             ]
@@ -2597,5 +2705,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1779721708
+    "modified": 1781651640
 }
